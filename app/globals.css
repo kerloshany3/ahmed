@@ -2,20 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+
+  
+
+
+  .blob-animation {
+    width: 600px; /* You can adjust the width */
+    height: 600px; /* You can adjust the height */
+    margin: auto;
+    display: block;
+    transition: transform 0.3s ease;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  
+  .blob-animation:hover {
+    transform: scale(1.1); /* Example: scales the blob on hover */
+  }
+  
+  
