@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-image': "url('/imageAhmed.png')",
+        'custom-image': "url('/noise.jpg')",
       },
       direction: {
         rtl: 'rtl', // Right-to-left
@@ -27,6 +27,7 @@ module.exports = {
         thirdcolor:"#fb8500"
       },
       fontFamily: {
+        anton: ['Anton', 'sans-serif'], // Add Anton as a custom font
         arabicUI: ['arabicUI', 'sans-serif'],
         arabicUI2: ['arabicUI2', 'sans-serif'],
         arabicUI3: ['arabicUI3', 'sans-serif'],
