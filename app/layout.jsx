@@ -20,6 +20,7 @@ const rakkas = Rakkas({
 });
 import { Abril_Fatface } from 'next/font/google';
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const abrilFatface = Abril_Fatface({
   subsets: ['latin'],
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
         <div className=" p-10">
 
 
+        <Header></Header>
         {children}
         </div>
 
