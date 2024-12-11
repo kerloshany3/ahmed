@@ -12,7 +12,9 @@ const getAllCourseList = async () => {
     isfree
     nameofcourse
     price
-    color
+    color    
+    nicknameforcourse
+
   }
 }
 
@@ -21,7 +23,31 @@ const getAllCourseList = async () => {
     const result = await request(MASTER_URL, query)
     return result
 }
+const getcourseinfo = async (courseid) => {
+    const query2 = gql`
+    query MyQuery {
+  course(where: {nicknameforcourse: "`+ courseid + `"}) {
+    nameofcourse
+    price
+    description
+    color
+    isfree
+   chapterMood {
+      chaptervideo {
+        url
+        fileName
+      }
+       nameofchapter
 
+    }
+  }
+}`
+
+    const result2 = await request(MASTER_URL, query2)
+    return result2
+
+}
 export default {
-    getAllCourseList
+    getAllCourseList,
+    getcourseinfo
 }

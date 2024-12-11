@@ -19,6 +19,8 @@ export default function Home() {
     <div className="">
       
       <Hero></Hero>
+      
+      
       <Content></Content>
       <Courses></Courses>
     </div>

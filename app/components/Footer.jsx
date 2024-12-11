@@ -19,7 +19,7 @@ const Footer = () => {
 
           </div>
 
-          <h3 className=' flex justify-center font-anton text-3xl m-auto text-slate-600 mt-10'>
+          <h3 className=' flex justify-center w-full font-anton text-3xl m-auto text-slate-600 mt-10'>
             <span className=' mx-3'>
               <FaFileCode />
             </span>
