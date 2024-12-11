@@ -9,17 +9,9 @@ const page = ({ params }) => {
     const [courseInfo, setCourseInfo] = useState([])
     const [courseVideoChapters, setcourseVideoChapters] = useState([])
     const [activeIndex, setActiveIndex] = useState(0)
-    const [videoUrl, setVideoUrl] = useState(null);
-
-
     useEffect(() => {
-        if (courseVideoChapters && courseVideoChapters[1]?.chaptervideo?.url) {
-            setVideoUrl(courseVideoChapters[1].chaptervideo.url);
-        }
-    }, [courseVideoChapters]);
+        courseid ? getallcoures(courseid) : null
 
-    useEffect(() => {
-        courseid && getallcoures()
     }, [courseid])
 
 
@@ -30,9 +22,8 @@ const page = ({ params }) => {
             setcourseVideoChapters(res.course.chapterMood)
         })
     }
+    console.log(courseVideoChapters[2]?.chaptervideo?.url)
 
-
-    console.log(courseVideoChapters[0]?.chaptervideo?.url)
 
 
     return (
@@ -87,10 +78,13 @@ const page = ({ params }) => {
                     <div>
                         <h3 className=' text-right text-4xl text-slate-800'>{courseVideoChapters[0]?.nameofchapter}</h3>
 
-                        <video width={1000} className=' my-6 rounded-2xl shadow-black shadow-xl' height={500} controls>
-                            <source type='video/mp4' src={videoUrl} />
-                        </video>
-                     
+                        {courseVideoChapters[2]?.chaptervideo?.url ? (
+
+                            <video width={1000} className=' my-6 rounded-2xl shadow-black shadow-xl' height={500} controls>
+                                <source type='video/mp4' src={courseVideoChapters[2]?.chaptervideo?.url} />
+                            </video>
+
+                        ) : null}
                     </div>
                 </div>
             </div>
