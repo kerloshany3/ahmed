@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaLightbulb } from "react-icons/fa";
+import { GiTakeMyMoney } from "react-icons/gi";
 
 const Hero = () => {
     return (
@@ -42,6 +43,12 @@ const Hero = () => {
                         </span> ❝ لو طريقك صعب اعرف ان النهاية حلوة ❞ </h3>
                       
 
+                    </div>
+
+                    <div className='  shadow-2xl shadow-yellow-400 rounded-xl bg-yellow-400 p-4  w-fit  '>
+                        <div className=' absolute bg-black   right-28 bottom-28 w-7 h-7 rounded-full'></div>
+                        <h2 className=' flex text-4xl text-black justify-end 3'> <span className='text-5xl'><GiTakeMyMoney /></span> 
+                         خصم علي كورس التكاثر الان</h2>
                     </div>
                 </div>
 

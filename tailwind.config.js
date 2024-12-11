@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      direction: {
+        rtl: 'rtl', // Right-to-left
+        ltr: 'ltr', // Left-to-right 
+      },
       colors: {
         primary: "#971c1c",
         primary2:"#d62727",
