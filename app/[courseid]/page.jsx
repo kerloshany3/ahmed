@@ -90,7 +90,7 @@ const page = ({ params }) => {
                         <video width={1000} className=' my-6 rounded-2xl shadow-black shadow-xl' height={500} controls>
                             <source type='video/mp4' src={videoUrl} />
                         </video>
-                        <h2>{videoUrl}</h2>
+                     
                     </div>
                 </div>
             </div>
