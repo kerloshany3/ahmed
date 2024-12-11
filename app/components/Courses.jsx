@@ -27,17 +27,17 @@ const Courses = () => {
 
 
     return (
-        <div>
+        <div className=' flex justify-start m-auto '>
             <div>
                 <div>
-                    <div className='   flex justify-end my-16'>
+                    <div className=' max-sm:justify-start  flex justify-end my-16'>
                         <h3 className='  max-md:text-5xl flex text-6xl dark:text-white text-slate-800'><span className=' mx-4'><FaBookmark />
                         </span>الكورسات</h3>
                     </div>
                 </div>
-                <div className=' grid-cols-3 max-xl:grid-cols-2 max-md:grid-cols-1 grid rtl-grid container'>
+                <div className=' grid-cols-3  max-xl:grid-cols-2 max-md:grid-cols-1 grid rtl-grid container'>
                     {datacourse.map((item, index) => (
-                        <div key={index} className={` h-fit bg-gradient-to-br shadow-2xl  p-5 m-5 rounded-2xl 
+                        <div key={index} className={` h-fit max-sm:w-fit  bg-gradient-to-br shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl 
                          ${item.color === "green" && "shadow-green-500/70 from-green-500 to-green-300 "}
                          ${item.color === "red" && "shadow-red-500/70 from-red-500 to-red-300 "}
                          ${item.color === "orange" && "shadow-orange-500/70 from-orange-500 to-orange-300 "}
