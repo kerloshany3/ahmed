@@ -5,21 +5,21 @@ import { MdDeleteForever } from "react-icons/md";
 
 const Content = () => {
     return (
-        <div className='font-arabicUI3 text-center  '>
-            <div className=' bg-red-500 flex p-3 rounded-2xl shadow-xl shadow-red-500/50'>
-                <div className=' w-1/3 bg-red-200 rounded-lg outline-dashed outline-red-200 outline-offset-4 h-36 flex justify-center p-5 m-6'>
+        <div className=' mt-9   font-arabicUI3 text-center  '>
+            <div className=' bg-red-500 max-md:w-fit max-md:scale-90 flex p-3 rounded-2xl  max-md:grid  shadow-xl shadow-red-500/50'>
+                <div className=' max-md:w-fit w-1/3 bg-red-200 rounded-lg outline-dashed outline-red-200 outline-offset-4 h-36 max-md:h-fit flex justify-center p-5 m-6'>
                     <div className=' flex justify-center m-auto'>
                         <h4 className=' text-4xl gap-3 flex place-items-center text-red-500'><span className=' text-7xl'><FaBook />
                         </span>امتحانات اسبوعيه</h4>
                     </div>
                 </div>
-                <div className=' w-1/3  bg-red-200 rounded-lg outline-dashed outline-red-200 outline-offset-4 h-36 flex justify-center p-5 m-6'>
-                    <div className=' flex justify-center m-auto'>
-                        <h4 className=' text-4xl gap-3 flex place-items-center text-red-500'><span className=' text-8xl'><FaStopwatch20 />
+                <div className='  max-md:w-fit w-1/3   bg-red-200 rounded-lg outline-dashed outline-red-200 outline-offset-4 h-36 flex justify-center p-5 m-6'>
+                    <div className='  flex justify-center m-auto'>
+                        <h4 className=' text-4xl max-md:text-3xl gap-3 flex place-items-center text-red-500'><span className='  text-8xl'><FaStopwatch20 />
                         </span>عدد المشاهدات مفتوح</h4>
                     </div>
                 </div>
-                <div className=' w-1/3  bg-red-200 rounded-lg outline-dashed outline-red-200 outline-offset-4 h-36 flex justify-center p-5 m-6'>
+                <div className='  max-md:w-fit w-1/3  bg-red-200 rounded-lg outline-dashed outline-red-200 outline-offset-4 h-36 flex justify-center p-5 m-6'>
                     <div className='  flex justify-center m-auto'>
                         <h4 className=' text-3xl  gap-3 flex place-items-center text-red-500'><span className=' text-8xl'><MdDeleteForever />
                         </span>لا يتم حذف المحتوي بعد وقت محدد</h4>

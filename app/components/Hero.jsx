@@ -9,14 +9,14 @@ const Hero = () => {
 
                 <div className=" flex justify-end">
 
-                    <img src="/imageAhmed.png" width={600} height={200} className=' drop-shadow-2xl'></img>
+                    <img src="/imageAhmed.png" width={600} height={200} className=' drop-shadow-2xl max-md:hidden'></img>
 
 
                 </div>
 
                 <div className=" ">
 
-                    <h2 className=" flex justify-end  my-10 text-6xl text-red-500">
+                    <h2 className=" leading-normal flex justify-end max-md:mr-7 max-md:text-4xl  my-10 text-6xl text-red-500">
                         .. احمد السيد
                         <span className=" dark:text-slate-400 text-slate-950">
                             <span className=" text-4xl">/</span>
@@ -24,12 +24,15 @@ const Hero = () => {
                         </span>
                     </h2>
 
+                    <img src="/imageAhmed.png" width={500} height={200} className=' drop-shadow-2xl hidden max-md:block '></img>
+
+
                     <div className=''>
-                        <h1 className=' dark:text-slate-400 text-5xl my-4 flex justify-end'>
-                            <span className='font-abril text-7xl -mt-3 mr-3 text-red-500 flex justify-start'>2025</span>
+                        <h1 className=' max-md:text-4xl  max-md:mr-7 dark:text-slate-400 text-5xl my-4 flex justify-end'>
+                            <span className='font-abril  max-md:text-5xl max-md:mt-1 text-7xl -mt-3 mr-3 text-red-500 flex justify-start'>2025</span>
                             يرحب بدفعه </h1>
 
-                        <h1 className=' dark:text-slate-400 text-5xl'>لشرح منهج <span className=' hover:scale-90 duration-300 text-red-600'>
+                        <h1 className='  text-right leading-relaxed max-md:mr-6 dark:text-slate-400 max-md:leading-relaxed max-md:text-right text-5xl'>لشرح منهج <span className=' hover:scale-90 duration-300 text-red-600'>
                             الاحياء
                         </span>
 
@@ -38,17 +41,16 @@ const Hero = () => {
                             </span>
                         </h1>
 
-                        <h3 className=' text-5xl flex justify-end  text-yellow-500 hover:scale-110 duration-300 my-20 font-rakkas'> <span>
-                        <FaLightbulb />
+                        <h3 className=' text-5xl flex justify-end  text-yellow-500 hover:scale-110 duration-300 my-10 font-rakkas'> <span>
+                            <FaLightbulb />
                         </span> ❝ لو طريقك صعب اعرف ان النهاية حلوة ❞ </h3>
-                      
+
 
                     </div>
 
-                    <div className='  shadow-2xl shadow-yellow-400 rounded-xl bg-yellow-400 p-4  w-fit  '>
-                        <div className=' absolute bg-black  dark:bg-yellow-300 drop-shadow-2xl  right-28 bottom-24 w-7 h-7 rounded-full'></div>
-                        <h2 className=' flex text-4xl text-black justify-end 3'> <span className='text-5xl'><GiTakeMyMoney /></span> 
-                         خصم علي كورس التكاثر الان</h2>
+                    <div className='  flex m-auto shadow-2xl shadow-yellow-400 rounded-xl bg-yellow-400 p-4  w-fit  '>
+                        <h2 className=' flex max-md:text-xl max-md:h-fit  text-4xl text-black justify-end 3'> <span className='text-5xl'><GiTakeMyMoney /></span>
+                            خصم علي كورس التكاثر الان</h2>
                     </div>
                 </div>
 

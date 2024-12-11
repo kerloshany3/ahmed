@@ -30,12 +30,12 @@ const Courses = () => {
         <div>
             <div>
                 <div>
-                    <div className='  flex justify-end my-16'>
-                        <h3 className=' flex text-6xl dark:text-white text-slate-800'><span className=' mx-4'><FaBookmark />
+                    <div className='   flex justify-end my-16'>
+                        <h3 className='  max-md:text-5xl flex text-6xl dark:text-white text-slate-800'><span className=' mx-4'><FaBookmark />
                         </span>الكورسات</h3>
                     </div>
                 </div>
-                <div className=' grid-cols-3 grid rtl-grid container'>
+                <div className=' grid-cols-3 max-xl:grid-cols-2 max-md:grid-cols-1 grid rtl-grid container'>
                     {datacourse.map((item, index) => (
                         <div key={index} className={` h-fit bg-gradient-to-br shadow-2xl  p-5 m-5 rounded-2xl 
                          ${item.color === "green" && "shadow-green-500/70 from-green-500 to-green-300 "}
@@ -43,8 +43,8 @@ const Courses = () => {
                          ${item.color === "orange" && "shadow-orange-500/70 from-orange-500 to-orange-300 "}
                          ${item.color === "slate" && "shadow-slate-500/70 from-slate-500 to-slate-300 "}
                          ${item.color === "blue" && "shadow-blue-500/70 from-blue-500 to-blue-300 "}`}>
-                            <h3 className=' text-white text-5xl flex text-right leading-relaxed'>{item?.nameofcourse}</h3>
-                            <p className={`whitespace-pre-line drop-shadow-xl leading-relaxed text  text-right mt-6 text-2xl font-arabicUI3
+                            <h3 className=' text-white text-5xl max-md:text-5xl max-md:leading-relaxed  leading-relaxed flex text-right '>{item?.nameofcourse}</h3>
+                            <p className={`whitespace-pre-line drop-shadow-xl leading-relaxed text max-md:text-xl  text-right mt-6 text-2xl font-arabicUI3
                                  ${item.color === "red" && "text-red-800"}
                                  ${item.color === "orange" && "text-orange-800"}
                                  ${item.color === "green" && "text-green-800"}
@@ -59,9 +59,15 @@ const Courses = () => {
                                  ${item.color === "green" && "text-green-500 shadow-green-400"}
                                  ${item.color === "slate" && "text-slate-500 shadow-slate-400"}
                                  ${item.color === "blue" && "text-blue-500 shadow-blue-400"}
-                                 outline-dashed outline-4 outline-offset-4 `} >مشاهده الكورس</button>
+                                 outline-dashed outline-4 outline-offset-4 max-md:text-3xl max-md:mt-5 `} >مشاهده الكورس</button>
 
-                            <h1 className=' text-5xl rounded-lg  drop-shadow-2xl  text-white justify-center flex p-4 m-auto  font-arabicUI3'><span>{item.price}</span>جنيه</h1>
+                            {!item.isfree ? 
+                             <h1 className=' text-5xl rounded-lg  drop-shadow-2xl  text-white justify-center flex p-4 m-auto  font-arabicUI3'>
+                                    <span>{item.price}</span>جنيه</h1> : 
+                            <h1 className=' text-5xl rounded-lg  drop-shadow-2xl  text-white justify-center flex p-4 m-auto  font-arabicUI3'>
+                                    مجانا</h1>
+                        }
+                           
 
                         </div>))}
 
