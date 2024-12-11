@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-image': "url('/imageAhmed.png')",
+      },
       direction: {
         rtl: 'rtl', // Right-to-left
         ltr: 'ltr', // Left-to-right 

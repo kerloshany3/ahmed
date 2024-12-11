@@ -12,16 +12,5 @@
   }
 
   
-  .blob-animation {
-    width: 600px; /* You can adjust the width */
-    height: 600px; /* You can adjust the height */
-    margin: auto;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  
-  .blob-animation:hover {
-    transform: scale(1.1); /* Example: scales the blob on hover */
-  }
   
   

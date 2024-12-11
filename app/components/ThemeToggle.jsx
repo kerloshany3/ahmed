@@ -2,6 +2,8 @@
 
 
 import { useState, useEffect } from 'react';
+import { MdWbSunny } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState('dark'); // Default theme is "dark"
@@ -29,10 +31,16 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 bg-white dark:bg-primary2 font-abril text-4xl rounded-lg shadow-md text-gray-800 dark:text-gray-200"
-    >
-      {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-    </button>
+      className={`p-2 m-2 font-abril text-4xl `}
+      >
+          
+          {theme === 'light' ? (
+          <h3 className=' text-slate-700 outline-dashed  p-3 rounded-full shadow-2xl shadow-slate-500'> <MdDarkMode /></h3>
+          ) : (<h3 className=' text-yellow-400 outline-dashed  p-3 rounded-full shadow-2xl shadow-yellow-500'><MdWbSunny /></h3>) }
+          
+
+          
+      </button>
   );
 }
 

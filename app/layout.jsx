@@ -12,6 +12,7 @@ const rakkas = Rakkas({
   weight: '400', // Specify the weight, if applicable
 });
 import { Abril_Fatface } from 'next/font/google';
+import Footer from "./components/Footer";
 
 const abrilFatface = Abril_Fatface({
   subsets: ['latin'],
@@ -27,12 +28,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`  ${ArabicUI.className} dark:bg-slate-900 p-10 rounded-xl   antialiased`}
+        className={`  ${ArabicUI.className}  dark:bg-slate-950   antialiased`}
       >
 
 
+        <div className=" p-10">
+
 
         {children}
+        </div>
+
+        <Footer></Footer>
+       
       </body>
     </html>
   );
