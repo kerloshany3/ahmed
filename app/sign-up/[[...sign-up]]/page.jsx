@@ -12,7 +12,7 @@ const page = () => {
       */}
       
                   <section className=" ">
-                      <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
+                      <div className="lg:grid lg:min-h-screen bg-[url('/dna.png')] bg-center bg-cover  lg:grid-cols-12">
                           <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
                               <img
                                   alt=""
@@ -47,7 +47,7 @@ const page = () => {
                           </section>
       
                           <main
-                              className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
+                              className="flex items-center justify-center  backdrop-blur-sm bg-black/10 hover:backdrop-brightness-125 hover:backdrop-blur-md duration-700 px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
                           >
                               <div className="max-w-xl lg:max-w-3xl">
                                   <div className="relative -mt-16 block lg:hidden">

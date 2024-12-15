@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-image': "url('/noise.jpg')",
+        'custom-image': "url('/dna.png')",
       },
       direction: {
         rtl: 'rtl', // Right-to-left

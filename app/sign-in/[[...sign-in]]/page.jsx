@@ -11,7 +11,7 @@ const page = () => {
     - @tailwindcss/forms
 */}
 
-            <section className=" ">
+            <section className=" rounded-xl bg-[url('/dna.png')] bg-center bg-cover ">
                 <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                     <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
                         <img
@@ -47,9 +47,9 @@ const page = () => {
                     </section>
 
                     <main
-                        className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
+                        className="flex items-center backdrop-blur-sm bg-black/10 hover:backdrop-brightness-125 hover:backdrop-blur-md duration-700 justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
                     >
-                        <div className="max-w-xl lg:max-w-3xl">
+                        <div className="max-w-xl  lg:max-w-3xl">
                             <div className="relative -mt-16 block lg:hidden">
                                 <a
                                     className="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20"
@@ -79,7 +79,7 @@ const page = () => {
                                 </p>
                             </div>
 
-                            <div className=' text-4xl '>
+                            <div className='  text-4xl '>
                             <SignIn></SignIn>
                             </div>
                                
