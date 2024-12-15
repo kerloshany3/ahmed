@@ -3,12 +3,16 @@ import { useUser } from '@clerk/nextjs'
 import React, { useEffect, useState } from 'react'
 import GlobalApi from '@/app/api/GlobalApi';
 import { HiHeart } from "react-icons/hi";
+import { ToastContainer, toast } from 'react-toastify';
 
+  import 'react-toastify/dist/ReactToastify.css';
 const Page = ({ params }) => {
     const { idpay } = React.use(params);
     const [courseInfo, setCourseInfo] = useState([]);
     const [number, setNumber] = useState('');
     const [loading, setLoading] = useState(false); // State for loading status
+
+    const [showmodel, setshowmodel] = useState(false)
 
     const handlenumber = (e) => {
         setNumber(e.target.value);
@@ -42,6 +46,9 @@ const Page = ({ params }) => {
     }, [user]);
 
     const handleclicknum = async () => {
+
+    
+
         if (!user || number.length < 10) return; // Validate input and user existence
 
         setLoading(true); // Start loading when sending data
@@ -55,12 +62,22 @@ const Page = ({ params }) => {
         } catch (error) {
             console.error("Error sending data:", error);
         } finally {
-            setLoading(false); // Stop loading after sending data
+            setLoading(false);
+            setshowmodel(true)// Stop loading after sending data
+
+           
+        }
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleclicknum(); // Trigger the button click when Enter is pressed
         }
     };
 
     return (
         <div className='text-white text-5xl font-abril mt-7'>
+
             {user ? (
                 <div className='w-1/2 m-auto bg-custom-image p-6 bg-cover rounded-xl shadow-2xl shadow-red-900/30'>
                     <h1 className='m-auto flex justify-center font-arabicUI3'>
@@ -110,33 +127,41 @@ const Page = ({ params }) => {
                             {courseInfo.nameofcourse}
                         </h1>
 
-                        <div className='m-auto mt-6 rounded-xl justify-center font-arabicUI3 bg-black/15 border shadow-2xl shadow-white/20'>
-                            <h1 className='p-2 rounded-xl w-fit text-center leading-relaxed place-items-center'>
-                                بعد متحول ابعت الرقم اللي حولت منه
-                            </h1>
-                            <input
-                                type="number"
-                                value={number}
-                            
-                                onChange={handlenumber}
-                                maxLength="12"
-                                size="12"
-                                className='my-5 p-2 rounded-lg w-4/5 flex justify-center m-auto text-black'
-                            />
+                        {!showmodel ? (
+                            <div className='m-auto mt-6 rounded-xl justify-center font-arabicUI3 bg-black/15 border shadow-2xl shadow-white/20'>
+                                <h1 className='p-2 rounded-xl w-fit text-center leading-relaxed place-items-center'>
+                                    بعد متحول ابعت الرقم اللي حولت منه
+                                </h1>
+                                <input
+                                    type="number"
+                                    value={number}
+                                    onKeyDown={handleKeyPress}
+                                    onChange={handlenumber}
+                                    maxLength="12"
+                                    size="12"
+                                    className='my-5 p-2 rounded-lg w-4/5 flex justify-center m-auto text-black'
+                                />
 
-                            <button
-                                disabled={number.length < 10}
-                                onClick={handleclicknum}
-                                className={`${
-                                    loading ? "bg-gray-500" : "bg-red-500"
-                                } p-3 rounded-xl flex justify-center m-auto shadow-xl disabled:bg-red-300 disabled:text-white shadow-red-500/40 my-10 duration-700`}
-                            >
-                                {loading ? "جاري الإرسال..." : <>
-                                    <HiHeart />
-                                    تم التحويل
-                                </>}
-                            </button>
-                        </div>
+                                <button
+                                    disabled={number.length < 10}
+                                    onClick={handleclicknum}
+                                    className={`${loading ? "bg-gray-500" : "bg-red-500"
+                                        } p-3 rounded-xl flex justify-center m-auto shadow-xl disabled:bg-red-300 disabled:text-white shadow-red-500/40 my-10 duration-700`}
+                                >
+                                    {loading ? "جاري الإرسال..." : <>
+                                        <HiHeart />
+                                        تم التحويل
+                                    </>}
+                                </button>
+                                
+                            </div>
+
+                        ) : (
+                            <h4 className=' flex font-arabicUI3 outline-dashed outline-2  bg-white/10   p-5 m-5 rounded-2xl text-center leading-normal'
+                            >تم ارسال البيانات وهيتم تفعيل الكورس خلال 24 ساعة
+
+                            </h4>
+                        )}
                     </div>
                 </div>
             ) : (
