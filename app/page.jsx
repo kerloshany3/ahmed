@@ -16,7 +16,7 @@ export default function Home() {
   return (
 
 
-    <div className="">
+    <div className=" font-arabicUI">
       
       <Hero></Hero>
       

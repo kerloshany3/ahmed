@@ -4,6 +4,14 @@ const ArabicUI = localFont({ src: './fonts/DG-Gaza.ttf' })
 const ArabicUI2 = localFont({ src: './fonts/LANTX.otf' })
 const ArabicUI3 = localFont({ src: './fonts/Rubik.ttf' })
 import { Anton } from 'next/font/google';
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
+
 
 // Configure Anton font
 const anton = Anton({
@@ -34,23 +42,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`  ${ArabicUI.className}  dark:bg-slate-950   antialiased`}
-      >
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={` dark:bg-slate-950   antialiased`}
+        >
 
 
-        <div className="  p-10">
+          <div className="  p-10">
 
-          
 
-        <Header></Header>
-        {children}
-        </div>
 
-        <Footer></Footer>
-       
-      </body>
-    </html>
+            <Header></Header>
+            {children}
+          </div>
+
+          <Footer></Footer>
+
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

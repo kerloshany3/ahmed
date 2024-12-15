@@ -1,9 +1,18 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { act, useEffect, useState } from 'react'
 import GlobalApi from '../api/GlobalApi'
 import { FaLock } from "react-icons/fa6";
 import EnrollmentSection from '../components/EnrollmentSection';
 import { FaBookOpenReader } from "react-icons/fa6";
+import { FaPlay } from "react-icons/fa";
+import {
+    ClerkProvider,
+    SignInButton,
+    SignedIn,
+    SignedOut,
+    UserButton
+} from '@clerk/nextjs'
+  
 
 const page = ({ params }) => {
     const { courseid } = React.use(params); // Retrieve parameters from the route
@@ -30,7 +39,7 @@ const page = ({ params }) => {
 
     return (
 
-        <div>
+        <div className=' font-arabicUI'>
             <div className={`  h-fit max-sm:w-fit  bg-gradient-to-l shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl 
                          ${courseInfo.color === "green" && "shadow-green-500/70 from-green-500 to-green-400 "}
                          ${courseInfo.color === "red" && "shadow-red-500/70 from-red-500 to-red-400 "}
@@ -66,11 +75,16 @@ const page = ({ params }) => {
 
                         {courseVideoChapters.map((item, index) => (
 
-                            <div key={index} className=' bg-slate-700 hover:bg-slate-900 relative duration-500 cursor-pointer p-5 rounded-lg my-5 text-right '>
-                                <h2 className=' text-white text-3xl '> <span className=' absolute left-5'><FaLock /></span>{item.nameofchapter}  </h2>
+                            <div key={index} className=' hover:scale-105 hover:bg-white  bg-slate-700  relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>  
+                                <h2 className={` hover:text-slate-700 duration-500  text-white text-3xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
+                                    <span className=' absolute left-5'>
+                                     {activeIndex == index ? <FaPlay /> :    <FaLock /> }
+                                     
+                                    </span>{item.nameofchapter}  </h2>
                             </div>
                         ))}
 
+                        <SignInButton></SignInButton>
 
                     </div>
 
