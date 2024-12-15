@@ -32,7 +32,7 @@ const getcourseinfo = async (courseid) => {
     description
     color
     isfree
-    
+    nicknameforcourse
    chapterMood {
       chaptervideo {
         url

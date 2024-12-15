@@ -1,7 +1,16 @@
+import { useUser } from '@clerk/nextjs';
+import Link from 'next/link';
 import React from 'react'
 import { FaBookOpenReader } from "react-icons/fa6";
 
+
+
 const EnrollmentSection = ({ courseInfo }) => {
+
+    const { user } = useUser()
+
+    console.log(courseInfo)
+    console.log(courseInfo.price)
     return (
         <div>
             {courseInfo.isfree ?
@@ -17,11 +26,26 @@ const EnrollmentSection = ({ courseInfo }) => {
                 (
                     <div className={`   h-fit max-sm:w-fit  bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 from-green-400 to-green-500 rounded-2xl `}>
 
-                        <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl'>
+                        {user ? (
+                            <Link href={`/payment/${courseInfo.nicknameforcourse}`} >
+                                <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl'>
 
-                            <span className=' p-6 rounded-2xl text-green-500 block w-full bg-white m-auto text-center'>اشترك دلوقتي</span>
+                                    <span className=' p-6 rounded-2xl text-green-500 block w-full bg-white m-auto text-center'>اشترك دلوقتي</span>
 
-                        </h2>
+                                </h2>
+                            </Link>
+
+                        ) : (
+                            <Link href='/sign-in' >
+                                <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl'>
+
+                                    <span className=' p-6 rounded-2xl text-green-500 block w-full bg-white m-auto text-center'>اشترك دلوقتي</span>
+
+                                </h2>
+                            </Link>
+                        )}
+
+
                         <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl my-5'>
                             <span>جنيه</span>
                             {courseInfo.price}بـــ
