@@ -4,7 +4,7 @@ import GlobalApi from '../api/GlobalApi'
 import { FaLock } from "react-icons/fa6";
 import EnrollmentSection from '../components/EnrollmentSection';
 import { FaPlay } from "react-icons/fa";
-import PaymentDetils from '../components/PaymentDetils';
+
 
 
 const page = ({ params }) => {
