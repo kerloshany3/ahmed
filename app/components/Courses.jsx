@@ -54,7 +54,7 @@ const Courses = () => {
                                   `} >
                                 {item?.description}
                             </p>
-                            <Link href={`/${item?.nicknameforcourse}`} >
+                            <Link href={`/Courses/${item?.nicknameforcourse}`} >
                                 <div className={`   shadow-xl font-arabicUI2 w-fit max-2xl:text-4xl max-lg:text-3xl text-5xl m-auto flex justify-center p-4 bg-white rounded-2xl my-4     
                                  ${item.color === "red" && "text-red-500 shadow-red-400"}
                                  ${item.color === "orange" && "text-orange-500 shadow-orange-400"}

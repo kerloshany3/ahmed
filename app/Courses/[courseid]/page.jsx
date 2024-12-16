@@ -1,8 +1,8 @@
 'use client'
 import React, { act, useEffect, useState } from 'react'
-import GlobalApi from '../api/GlobalApi'
+import GlobalApi from '../../api/GlobalApi'
 import { FaLock } from "react-icons/fa6";
-import EnrollmentSection from '../components/EnrollmentSection';
+import EnrollmentSection from '../../components/EnrollmentSection';
 import { FaPlay } from "react-icons/fa";
 
 
