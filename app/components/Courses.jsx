@@ -55,13 +55,13 @@ const Courses = () => {
                                 {item?.description}
                             </p>
                             <Link href={`/${item?.nicknameforcourse}`} >
-                                <div className={`   shadow-xl font-arabicUI2 w-fit text-5xl m-auto flex justify-center p-4 bg-white rounded-2xl my-4     
+                                <div className={`   shadow-xl font-arabicUI2 w-fit max-2xl:text-4xl max-lg:text-3xl text-5xl m-auto flex justify-center p-4 bg-white rounded-2xl my-4     
                                  ${item.color === "red" && "text-red-500 shadow-red-400"}
                                  ${item.color === "orange" && "text-orange-500 shadow-orange-400"}
                                  ${item.color === "green" && "text-green-500 shadow-green-400"}
                                  ${item.color === "slate" && "text-slate-500 shadow-slate-400"}
                                  ${item.color === "blue" && "text-blue-500 shadow-blue-400"}
-                                 outline-dashed outline-4 outline-offset-4 max-md:text-3xl max-md:mt-5 hover:scale-110 duration-500 `}   >مشاهده الكورس</div>
+                                 outline-dashed outline-4 outline-offset-4 max-md:text-3xl  max-md:mt-5 hover:scale-110  duration-500 `}   >مشاهده الكورس</div>
                                 {!item.isfree ?
                                     <h1 className=' text-5xl rounded-lg  drop-shadow-2xl  text-white justify-center flex p-4 m-auto  font-arabicUI3'>
                                         <span>{item.price}</span>جنيه</h1> :

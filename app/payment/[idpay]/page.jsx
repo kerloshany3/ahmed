@@ -5,7 +5,8 @@ import GlobalApi from '@/app/api/GlobalApi';
 import { HiHeart } from "react-icons/hi";
 import { ToastContainer, toast } from 'react-toastify';
 
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import Link from 'next/link';
 const Page = ({ params }) => {
     const { idpay } = React.use(params);
     const [courseInfo, setCourseInfo] = useState([]);
@@ -47,7 +48,7 @@ const Page = ({ params }) => {
 
     const handleclicknum = async () => {
 
-    
+
 
         if (!user || number.length < 10) return; // Validate input and user existence
 
@@ -65,7 +66,7 @@ const Page = ({ params }) => {
             setLoading(false);
             setshowmodel(true)// Stop loading after sending data
 
-           
+
         }
     };
 
@@ -76,10 +77,10 @@ const Page = ({ params }) => {
     };
 
     return (
-        <div className='text-white text-5xl font-abril mt-7'>
+        <div className='text-white max-sm:text-2xl text-5xl font-abril mt-7'>
 
             {user ? (
-                <div className='w-1/2 m-auto bg-custom-image p-6 bg-cover rounded-xl shadow-2xl shadow-red-900/30'>
+                <div className='w-1/2 max-md:w-full max-sm:w-full m-auto bg-custom-image p-6 bg-cover rounded-xl shadow-2xl shadow-red-900/30'>
                     <h1 className='m-auto flex justify-center font-arabicUI3'>
                         مرحبا بك فبوابه الدفع
                     </h1>
@@ -99,7 +100,7 @@ const Page = ({ params }) => {
 
                     <div className='backdrop-blur-lg grid grid-cols-2'>
                         <div className='border rounded-bl-2xl'>
-                            <h1 className='text-2xl place-items-center mr-0 flex justify-center font-arabicUI3 m-2'>
+                            <h1 className=' max-sm:text-sm/4 text-2xl place-items-center mr-0 flex justify-center font-arabicUI3 m-2'>
                                 {user.primaryEmailAddress.emailAddress}
                             </h1>
                         </div>
@@ -111,9 +112,7 @@ const Page = ({ params }) => {
                     </div>
 
                     <div className='backdrop-blur-lg p-5 border mt-5 rounded-2xl'>
-                        <h1 className='m-auto mt-6 flex justify-center font-arabicUI3 place-items-center'>
-                            <span>فودافون كاش</span>&nbsp; وسيلة الدفع
-                        </h1>
+                        <h1 className='m-auto mt-6 flex justify-center font-arabicUI3 place-items-center leading-relaxed max-md:text-4xl'>الدفع فودافون كاش وسيلة </h1>
                         <h1 className='m-auto mt-6 flex justify-center font-arabicUI3 place-items-center'>
                             حول علي الرقم ده
                         </h1>
@@ -135,6 +134,7 @@ const Page = ({ params }) => {
                                 <input
                                     type="number"
                                     value={number}
+                                    placeholder='01000000000'
                                     onKeyDown={handleKeyPress}
                                     onChange={handlenumber}
                                     maxLength="12"
@@ -153,15 +153,21 @@ const Page = ({ params }) => {
                                         تم التحويل
                                     </>}
                                 </button>
-                                
+
                             </div>
 
                         ) : (
-                            <h4 className=' flex font-arabicUI3 outline-dashed outline-2  bg-white/10   p-5 m-5 rounded-2xl text-center leading-normal'
-                            >تم ارسال البيانات وهيتم تفعيل الكورس خلال 24 ساعة
+                            <>
+                                <h4 className=' flex font-arabicUI3 outline-dashed outline-2  bg-white/10   p-5 m-5 rounded-2xl text-center leading-normal'
+                                >تم ارسال البيانات وهيتم تفعيل الكورس خلال 24 ساعة
 
-                            </h4>
-                        )}
+                                </h4>
+                                <Link href='/'>
+                                    <div className=' flex justify-center m-auto font-arabicUI2 bg-white/20 w-fit p-2 rounded-xl outline-1 outline-white outline-dashed'>
+                                        <h1>الصفحة الرئيسية</h1>
+                                    </div>
+                                </Link>
+                            </>)}
                     </div>
                 </div>
             ) : (
