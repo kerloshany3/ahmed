@@ -88,6 +88,15 @@ const EnrollmentUsers = async (userEmail) => {
     id
     courseid
     userEmail
+    course {
+      nameofcourse
+      nicknameforcourse
+      price
+      color
+      dataofcourse
+      description
+      isfree
+    }
   }
 }
   `

@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'custom-image': "url('/dna.png')",
-        'pattern-image': "url('/pattern.png')",
+        'brain-image': "url('/brain.jpeg')",
       },
       direction: {
         rtl: 'rtl', // Right-to-left

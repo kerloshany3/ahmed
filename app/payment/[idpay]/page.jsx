@@ -12,13 +12,10 @@ const Page = ({ params }) => {
     const [courseInfo, setCourseInfo] = useState([]);
     const [number, setNumber] = useState('');
     const [loading, setLoading] = useState(false); // State for loading status
-
     const [showmodel, setshowmodel] = useState(false)
-
     const handlenumber = (e) => {
         setNumber(e.target.value);
     };
-
     const getallcoures = async () => {
         setLoading(true); // Start loading when fetching course data
         try {
