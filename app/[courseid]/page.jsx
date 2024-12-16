@@ -27,9 +27,6 @@ const page = ({ params }) => {
         })
     }
     
-
-
-
     return (
 
         <div className=' font-arabicUI'>
