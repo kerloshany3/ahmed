@@ -4,6 +4,7 @@ import Link from 'next/link'
 import ThemeToggle from './ThemeToggle'
 import { UserButton, useUser } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
+import { PiStudentBold } from "react-icons/pi";
 
 
 const Header = () => {
@@ -32,7 +33,18 @@ const Header = () => {
 
                     {user ? (<div className=' flex scale-150'>
                         <div className=' flex scale-150  '>
-                            <UserButton ></UserButton>
+                            <div className=' flex gap-2 ml-5 text-4xl '>
+
+
+
+                                <UserButton ></UserButton>
+                                <Link href='/subscriptions'>
+                                    <h5 className=' text-white'><PiStudentBold /></h5>
+
+                                </Link>
+
+                            </div>
+
                         </div>
                     </div>
                     ) : (
