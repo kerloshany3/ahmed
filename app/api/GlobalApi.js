@@ -78,8 +78,27 @@ const sendEnrollData = async (courseid, userEmail, phonenumber) => {
   const result3 = await request(MASTER_URL, query3)
   return result3
 }
+
+const EnrollmentUsers = async (userEmail) => {
+  const query4 = gql`
+  query MyQuery {
+  userEnrolls(where: {userEmail: "`+userEmail+`", isHePaid: true}) {
+    isHePaid
+    phonenumber
+    id
+    courseid
+    userEmail
+  }
+}
+  `
+
+  const result4 = await request(MASTER_URL, query4)
+  return result4;
+}
+
 export default {
   getAllCourseList,
   getcourseinfo,
-  sendEnrollData
+  sendEnrollData,
+  EnrollmentUsers
 }

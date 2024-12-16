@@ -18,8 +18,6 @@ const Header = () => {
         router.push("/sign-in")
     }
 
-    console.log(user)
-
     return (
         <div className=' max-sm:scale-90 font-arabicUI flex justify-between'>
 
