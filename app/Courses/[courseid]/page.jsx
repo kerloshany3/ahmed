@@ -62,25 +62,15 @@ const page = ({ params }) => {
 
     return (
 
-        <div className=' font-arabicUI'>
-            <div className={`  h-fit max-sm:w-fit  bg-gradient-to-l shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl 
-                         ${courseInfo.color === "green" && "shadow-green-500/70 from-green-500 to-green-400 "}
-                         ${courseInfo.color === "red" && "shadow-red-500/70 from-red-500 to-red-400 "}
-                         ${courseInfo.color === "orange" && "shadow-orange-500/70 from-orange-500 to-orange-400 "}
-                         ${courseInfo.color === "slate" && "shadow-slate-500/70 from-slate-500 to-slate-400 "}
-                         ${courseInfo.color === "blue" && "shadow-blue-500/70 from-blue-500 to-blue-400 "}`}>
-                <h3 className=' leading-relaxed max-sm:text-3xl text-5xl text-right  text-slate-800 '>{courseInfo.nameofcourse} </h3>
-                <p className=' my-10 font-arabicUI3 max-sm:text-lg text-2xl whitespace-pre-wrap text-right'>{courseInfo.description}</p>
+        <div className=' font-arabicUI bg-brain-image rounded-xl shadow-2xl shadow-white/15 p-5'>
+            <div className={`  h-fit max-sm:w-fit  outline-dashed outline-2 outline-white  backdrop-blur-2xl bg-gradient-to-l shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl `}>
+                <h3 className=' leading-relaxed max-sm:text-3xl text-5xl text-right  text-white '>{courseInfo.nameofcourse} </h3>
+                <p className=' my-10 font-arabicUI3 max-sm:text-lg text-2xl whitespace-pre-wrap text-white/90 text-right'>{courseInfo.description}</p>
             </div>
 
             <div className='grid max-sm:grid-cols-1 max-md:grid-cols-1 max-lg:grid-cols-1 grid-cols-3'>
                 <div>
-                    <div className={`   h-fit max-sm:w-fit  bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl 
-                         ${courseInfo.color === "green" && "shadow-green-500/70 from-green-500 to-green-400 "}
-                         ${courseInfo.color === "red" && "shadow-red-500/70 from-red-500 to-red-400 "}
-                         ${courseInfo.color === "orange" && "shadow-orange-500/70 from-orange-500 to-orange-400 "}
-                         ${courseInfo.color === "slate" && "shadow-slate-500/70 from-slate-500 to-slate-400 "}
-                         ${courseInfo.color === "blue" && "shadow-blue-500/70 from-blue-500 to-blue-400 "}`}>
+                    <div className={`   h-fit max-sm:w-fit  bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white bg-white/10 backdrop-blur-3xl`}>
                         <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl max-xl:text-3xl'>محتوي الكورس</h2>
 
 
@@ -123,18 +113,13 @@ const page = ({ params }) => {
 
 
 
-                <div className={`  h-fit max-sm:w-fit  col-span-2 bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl 
-                         ${courseInfo.color === "green" && "shadow-green-500/70 from-green-500 to-green-400 "}
-                         ${courseInfo.color === "red" && "shadow-red-500/70 from-red-500 to-red-400 "}
-                         ${courseInfo.color === "orange" && "shadow-orange-500/70 from-orange-500 to-orange-400 "}
-                         ${courseInfo.color === "slate" && "shadow-slate-500/70 from-slate-500 to-slate-400 "}
-                         ${courseInfo.color === "blue" && "shadow-blue-500/70 from-blue-500 to-blue-400 "}`}>
+                <div className={`  h-fit max-sm:w-fit  col-span-2 bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white backdrop-blur-2xl`}>
                     <div>
-                        <h3 className=' text-right text-4xl text-slate-800'>{courseVideoChapters[activeIndex]?.nameofchapter}</h3>
+                        <h3 className=' text-right mb-8 text-4xl text-white'>{courseVideoChapters[activeIndex]?.nameofchapter}</h3>
 
                         {courseVideoChapters[activeIndex]?.chaptervideo?.url ? (
 
-                            <video width={1000}  poster='/brain.jpeg' key={courseVideoChapters[activeIndex]?.chaptervideo?.url} className=' my-6 rounded-2xl shadow-black shadow-xl' height={500} controls>
+                            <video width={1000}  controlsList="nodownload"  poster='/brain.jpeg' key={courseVideoChapters[activeIndex]?.chaptervideo?.url} className=' my-6 rounded-2xl shadow-black/40 shadow-xl' height={500} controls>
                                 <source  type='video/mp4' src={courseVideoChapters[activeIndex]?.chaptervideo?.url} />
                             </video>
 

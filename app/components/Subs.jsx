@@ -42,7 +42,7 @@ const Subs = () => {
                 </div>
 
                 {user && EnrollDAta ? (
-                    < div className=' grid rtl-grid grid-cols-4'>
+                    < div className=' grid rtl-grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3 grid-cols-4'>
                         {EnrollDAta.map((item) => (
                             <div key={item?.course?.nicknameforcourse} className=' m-5 h-fit backdrop-blur-2xl shadow-white/10 outline-dashed outline-white outline-2 shadow-xl  p-5 rounded-xl'>
                                 <div className=''>
