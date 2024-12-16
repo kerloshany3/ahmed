@@ -112,7 +112,9 @@ const Page = ({ params }) => {
                     </div>
 
                     <div className='backdrop-blur-lg p-5 border mt-5 rounded-2xl'>
-                        <h1 className='m-auto mt-6 flex justify-center font-arabicUI3 place-items-center leading-relaxed max-md:text-4xl'>الدفع فودافون كاش وسيلة </h1>
+                        <h1 className='m-auto mt-6 flex justify-center font-arabicUI3 place-items-center leading-relaxed max-md:text-4xl'>
+                        <span>وسيلة الدفع فودافون كاش</span>
+                        </h1>
                         <h1 className='m-auto mt-6 flex justify-center font-arabicUI3 place-items-center'>
                             حول علي الرقم ده
                         </h1>
