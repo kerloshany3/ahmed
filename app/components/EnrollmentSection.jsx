@@ -73,7 +73,7 @@ const EnrollmentSection = ({ courseInfo }) => {
 
 
 
-                        {filteredcourse ? null : (
+                        {!isCourseFound && (
                             <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl my-5'>
                                 <span>جنيه</span>
                                 {courseInfo.price}بـــ

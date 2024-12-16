@@ -49,10 +49,14 @@ const page = ({ params }) => {
     console.log(courseInfo.price)
 
 
+
     const filteredcourse = EnrollDAta.filter(item => item?.course?.nicknameforcourse === courseInfo.nicknameforcourse)
     console.log("this:", filteredcourse)
     const isCourseFound = filteredcourse.length > 0;
 
+    const handlechapterClick = (index) => {
+        setActiveIndex(index)
+    }
 
 
 
@@ -80,22 +84,39 @@ const page = ({ params }) => {
                         <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl max-xl:text-3xl'>محتوي الكورس</h2>
 
 
-                        {courseVideoChapters.map((item, index) => (
-                            <div key={index} className=' hover:scale-105 hover:bg-white  bg-slate-700  relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
-                                <h2 className={` hover:text-slate-700 duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
-                                    <span className=' absolute left-5'>
-                                        {isCourseFound ? (
-                                            <FaPlay />
+                        {isCourseFound ? (
+                            courseVideoChapters.map((item, index) => (
+                                <div onClick={() => handlechapterClick(index)} key={index} className=' hover:scale-105 hover:bg-white  bg-slate-700  relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
+                                    <h2 className={`  hover:text-slate-700 duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
+                                        <span className=' absolute left-5'>
+                                            {isCourseFound ? (
+                                                <FaPlay />
+                                            ) : (
+                                                activeIndex == index ? <FaPlay /> : <FaLock />
+                                            )}
+                                        </span>{item.nameofchapter}  </h2>
+                                </div>
+                            ))
 
-                                        ) : (
-                                            activeIndex == index ? <FaPlay /> : <FaLock />
-                                        )}
-                                    </span>{item.nameofchapter}  </h2>
-                            </div>
-                        ))}
+
+                        ) : (
+                            courseVideoChapters.map((item, index) => (
+                                <div onClick={() => handlechapterClick(0)} key={index} className=' hover:scale-105 hover:bg-white  bg-slate-700  relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
+                                    <h2 className={`  hover:text-slate-700 duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
+                                        <span className=' absolute left-5'>
+                                            {isCourseFound ? (
+                                                <FaPlay />
+                                            ) : (
+                                                activeIndex == index ? <FaPlay /> : <FaLock />
+                                            )}
+                                        </span>{item.nameofchapter}  </h2>
+                                </div>
+                            ))
+
+                        )
 
 
-
+                        }
                     </div>
                     <EnrollmentSection courseInfo={courseInfo}></EnrollmentSection>
                 </div>
@@ -109,12 +130,12 @@ const page = ({ params }) => {
                          ${courseInfo.color === "slate" && "shadow-slate-500/70 from-slate-500 to-slate-400 "}
                          ${courseInfo.color === "blue" && "shadow-blue-500/70 from-blue-500 to-blue-400 "}`}>
                     <div>
-                        <h3 className=' text-right text-4xl text-slate-800'>{courseVideoChapters[0]?.nameofchapter}</h3>
+                        <h3 className=' text-right text-4xl text-slate-800'>{courseVideoChapters[activeIndex]?.nameofchapter}</h3>
 
-                        {courseVideoChapters[0]?.chaptervideo?.url ? (
+                        {courseVideoChapters[activeIndex]?.chaptervideo?.url ? (
 
-                            <video width={1000} className=' my-6 rounded-2xl shadow-black shadow-xl' height={500} controls>
-                                <source type='video/mp4' src={courseVideoChapters[0]?.chaptervideo?.url} />
+                            <video width={1000}  poster='/brain.jpeg' key={courseVideoChapters[activeIndex]?.chaptervideo?.url} className=' my-6 rounded-2xl shadow-black shadow-xl' height={500} controls>
+                                <source  type='video/mp4' src={courseVideoChapters[activeIndex]?.chaptervideo?.url} />
                             </video>
 
                         ) : null}
