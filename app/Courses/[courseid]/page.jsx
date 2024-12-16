@@ -4,6 +4,7 @@ import GlobalApi from '../../api/GlobalApi'
 import { FaLock } from "react-icons/fa6";
 import EnrollmentSection from '../../components/EnrollmentSection';
 import { FaPlay } from "react-icons/fa";
+import { useUser } from '@clerk/nextjs';
 
 
 
@@ -26,7 +27,35 @@ const page = ({ params }) => {
             setcourseVideoChapters(res.course.chapterMood)
         })
     }
-    
+
+
+
+
+    const { user } = useUser()
+    const [EnrollDAta, setEnrollData] = useState([])
+    console.log(user?.primaryEmailAddress?.emailAddress)
+    useEffect(() => {
+        user?.primaryEmailAddress?.emailAddress && EnrooolUser(user?.primaryEmailAddress?.emailAddress)
+    }, [user?.primaryEmailAddress?.emailAddress])
+
+    const EnrooolUser = () => {
+        GlobalApi.EnrollmentUsers(user?.primaryEmailAddress?.emailAddress).then(res => {
+            console.log(res.userEnrolls[0])
+            setEnrollData(res.userEnrolls)
+        })
+    }
+
+    console.log(courseInfo)
+    console.log(courseInfo.price)
+
+
+    const filteredcourse = EnrollDAta.filter(item => item?.course?.nicknameforcourse === courseInfo.nicknameforcourse)
+    console.log("this:", filteredcourse)
+    const isCourseFound = filteredcourse.length > 0;
+
+
+
+
     return (
 
         <div className=' font-arabicUI'>
@@ -55,7 +84,12 @@ const page = ({ params }) => {
                             <div key={index} className=' hover:scale-105 hover:bg-white  bg-slate-700  relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
                                 <h2 className={` hover:text-slate-700 duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
                                     <span className=' absolute left-5'>
-                                        {activeIndex == index ? <FaPlay /> : <FaLock />}
+                                        {isCourseFound ? (
+                                            <FaPlay />
+
+                                        ) : (
+                                            activeIndex == index ? <FaPlay /> : <FaLock />
+                                        )}
                                     </span>{item.nameofchapter}  </h2>
                             </div>
                         ))}
