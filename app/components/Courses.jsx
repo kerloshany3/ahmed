@@ -39,15 +39,15 @@ const Courses = () => {
                 <div className=' grid-cols-3  max-xl:grid-cols-2 max-md:grid-cols-1 grid rtl-grid container'>
                     {datacourse.map((item, index) => (
                         <div key={index} className={` hover:brightness-95 duration-500 hover:scale-110   hover:duration-700 h-fit max-sm:w-fit  bg-gradient-to-br shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl 
-                             backdrop-blur-2xl outline-white shadow-white/30 outline-dashed outline-2 bg-white/5   `}>
-                            <h3 className='  text-white text-3xl max-md:text-5xl max-md:leading-relaxed  leading-relaxed flex text-right '>{item?.nameofcourse}</h3>
-                            <p className={`whitespace-pre-line drop-shadow-xl leading-relaxed text max-md:text-xl  text-right mt-6 text-lg font-arabicUI3
+                             backdrop-blur-3xl outline-white shadow-white/30 outline-dashed outline-2 bg-white/5   `}>
+                            <h3 className='  text-white text-3xl  max-md:text-5xl max-md:leading-relaxed  leading-relaxed flex text-right '>{item?.nameofcourse}</h3>
+                            <p className={`whitespace-pre-line drop-shadow-2xl  leading-relaxed text max-md:text-xl  text-right mt-6 text-lg font-arabicUI3
                                 text-white/80
                                   `} >
                                 {item?.description}
                             </p>
                             <Link href={`/Courses/${item?.nicknameforcourse}`} >
-                                <div className={`   shadow-xl font-arabicUI2 w-fit max-2xl:text-4xl max-lg:text-3xl text-4xl m-auto flex justify-center p-2 bg-white/10 rounded-2xl my-4     
+                                <div className={`   shadow-xl font-arabicUI2 w-fit max-2xl:text-4xl max-lg:text-3xl text-4xl m-auto flex justify-center p-3 my-8 hover:bg-black/40 bg-white/10 rounded-xl      
                                  text-white
                                  outline-dashed outline-2 outline-offset-4 max-md:text-3xl  max-md:mt-5 hover:scale-110  duration-500 `}   >مشاهده الكورس</div>
                                 {!item.isfree ?
