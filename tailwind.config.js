@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       dropShadow: {
         white: '0 4px 6px rgba(255, 255, 255, 0.5)',
+        slate: '0 5px 20px rgba(255, 255, 255, 0.5)',
       },
       backgroundImage: {
         'custom-image': "url('/dna.png')",

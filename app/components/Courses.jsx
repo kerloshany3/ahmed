@@ -28,7 +28,7 @@ const Courses = () => {
 
 
     return (
-        <div className=' flex justify-start m-auto bg-brain-image cursor-default select-none bg-cover my-10 rounded-xl  p-5 '>
+        <div className=' flex justify-start m-auto max-sm:m-0 bg-brain-image cursor-default select-none bg-cover my-10 rounded-xl  p-5 '>
             <div>
                 <div>
                     <div className=' max-sm:justify-start  flex justify-end my-16'>
