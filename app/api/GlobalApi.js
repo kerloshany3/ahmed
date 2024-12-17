@@ -130,6 +130,7 @@ const getQuizDataWithEnroll = async (userEmail, quizId) => {
           opationD
           opationC
           qus
+          trueChoisevip
         }
       }
     }
