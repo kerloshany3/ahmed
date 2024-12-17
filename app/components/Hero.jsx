@@ -14,7 +14,7 @@ const Hero = () => {
 
                 </div>
 
-                <div className=" ">
+                <div className=" font-arabicUI3 ">
 
                     <h2 className=" leading-normal flex justify-end max-md:mr-7 max-md:text-4xl  my-10 text-6xl text-red-500">
                         .. احمد السيد

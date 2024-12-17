@@ -11,6 +11,7 @@ module.exports = {
       dropShadow: {
         white: '0 4px 6px rgba(255, 255, 255, 0.5)',
         slate: '0 5px 20px rgba(255, 255, 255, 0.5)',
+        red: '0 2px 50px rgba(245, 86, 85, 0.6)',
       },
       backgroundImage: {
         'custom-image': "url('/dna.png')",
