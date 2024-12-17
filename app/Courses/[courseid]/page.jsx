@@ -113,17 +113,21 @@ const page = ({ params }) => {
 
 
 
-                <div className={`  h-fit max-sm:w-fit  col-span-2 bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white backdrop-blur-2xl`}>
+                <div className={` relative  h-fit max-sm:w-fit  col-span-2 bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white backdrop-blur-2xl`}>
                     <div>
                         <h3 className=' text-right mb-8 text-4xl text-white'>{courseVideoChapters[activeIndex]?.nameofchapter}</h3>
 
                         {courseVideoChapters[activeIndex]?.chaptervideo?.url ? (
 
-                            <video width={1000}  controlsList="nodownload"  poster='/brain.jpeg' key={courseVideoChapters[activeIndex]?.chaptervideo?.url} className=' my-6 rounded-2xl shadow-black/40 shadow-xl' height={500} controls>
-                                <source  type='video/mp4' src={courseVideoChapters[activeIndex]?.chaptervideo?.url} />
+                            <video width={1000} controlsList="nodownload" poster='/brain.jpeg' key={courseVideoChapters[activeIndex]?.chaptervideo?.url} className=' my-6 rounded-2xl shadow-black/40 shadow-xl' height={500} controls>
+                                <source type='video/mp4' src={courseVideoChapters[activeIndex]?.chaptervideo?.url} />
                             </video>
 
+
+
                         ) : null}
+
+                        <div className="absolute top-0 left-0 w-full h-full bg-transparent z-20"></div>
                     </div>
 
 
