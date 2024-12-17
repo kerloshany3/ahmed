@@ -28,7 +28,7 @@ const Courses = () => {
 
 
     return (
-        <div className=' flex justify-start m-auto bg-brain-image bg-cover my-10 rounded-xl  p-5 '>
+        <div className=' flex justify-start m-auto bg-brain-image cursor-default select-none bg-cover my-10 rounded-xl  p-5 '>
             <div>
                 <div>
                     <div className=' max-sm:justify-start  flex justify-end my-16'>
@@ -40,7 +40,9 @@ const Courses = () => {
                     {datacourse.map((item, index) => (
                         <div key={index} className={` hover:brightness-95 duration-500 hover:scale-110   hover:duration-700 h-fit max-sm:w-fit  bg-gradient-to-br shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl 
                              backdrop-blur-3xl outline-white shadow-white/30 outline-dashed outline-2 bg-white/5   `}>
-                            <h3 className='  text-white text-3xl  max-md:text-5xl max-md:leading-relaxed  leading-relaxed flex text-right '>{item?.nameofcourse}</h3>
+                            <Link href={`/Courses/${item?.nicknameforcourse}`} >
+                                <h3 className='  text-white text-3xl  max-md:text-5xl max-md:leading-relaxed  leading-relaxed flex text-right '>{item?.nameofcourse}</h3>
+                            </Link>
                             <p className={`whitespace-pre-line drop-shadow-2xl  leading-relaxed text max-md:text-xl  text-right mt-6 text-lg font-arabicUI3
                                 text-white/80
                                   `} >
@@ -57,9 +59,9 @@ const Courses = () => {
                                         مجانا</h1>
                                 }
                             </Link></div>
-                          ))}
+                    ))}
+                </div>
             </div>
-        </div>
         </div >
     )
 }
