@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        white: '0 4px 6px rgba(255, 255, 255, 0.5)',
+      },
       backgroundImage: {
         'custom-image': "url('/dna.png')",
         'brain-image': "url('/brain.jpeg')",

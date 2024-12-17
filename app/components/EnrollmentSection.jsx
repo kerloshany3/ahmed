@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { FaBookOpenReader } from "react-icons/fa6";
 import GlobalApi from '../api/GlobalApi';
+import { BsPatchCheckFill } from "react-icons/bs";
 
 
 
@@ -50,13 +51,13 @@ const EnrollmentSection = ({ courseInfo }) => {
                             isCourseFound ? (
                                 <h2 className=' text-white cursor-default flex justify-center m-auto  font-arabicUI3 text-5xl'>
                                     <span className=' p-6 rounded-2xl text-green-500 block w-full bg-white m-auto text-center'>
-                                        {isCourseFound ? "تم الاشتراك" : "  اشترك دلوقتي"}
+                                        {isCourseFound ?<span className=' flex gap-5'><BsPatchCheckFill />تم الاشتراك</span> : "  اشترك دلوقتي"}
                                     </span>
                                 </h2>
                             ) : (<Link href={`/payment/${courseInfo.nicknameforcourse}`} >
                                 <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl'>
                                     <span className=' p-6 rounded-2xl text-green-500 block w-full bg-white m-auto text-center'>
-                                        {isCourseFound ? "تم الاشتراك" : "  اشترك دلوقتي"}
+                                        {isCourseFound ? <span className=' flex gap-5'><BsPatchCheckFill />تم الاشتراك</span> : "  اشترك دلوقتي"}
                                     </span>
                                 </h2>
                             </Link>)

@@ -76,7 +76,7 @@ const page = ({ params }) => {
 
                         {isCourseFound ? (
                             courseVideoChapters.map((item, index) => (
-                                <div onClick={() => handlechapterClick(index)} key={index} className=' hover:scale-105 hover:bg-white  bg-slate-700  relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
+                                <div onClick={() => handlechapterClick(index)} key={index} className=' hover:scale-105 hover:bg-white    relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
                                     <h2 className={`  hover:text-slate-700 duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
                                         <span className=' absolute left-5'>
                                             {isCourseFound ? (
@@ -91,7 +91,7 @@ const page = ({ params }) => {
 
                         ) : (
                             courseVideoChapters.map((item, index) => (
-                                <div onClick={() => handlechapterClick(0)} key={index} className=' hover:scale-105 hover:bg-white  bg-slate-700  relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
+                                <div onClick={() => handlechapterClick(0)} key={index} className=' hover:scale-105 hover:bg-white   relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
                                     <h2 className={`  hover:text-slate-700 duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
                                         <span className=' absolute left-5'>
                                             {isCourseFound ? (

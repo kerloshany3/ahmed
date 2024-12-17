@@ -37,9 +37,10 @@ const Header = () => {
                                 <UserButton ></UserButton>
 
 
-                            </div>
+                            </div>{/* 
+                            //rgba(250, 204, 21, 1) */}
                             <Link href='/subscriptions'>
-                                <h5 className=' my-7 flex justify-center text-3xl text-white'><PiStudentBold /></h5>
+                                <h5 className=' hover:scale-125 drop-shadow-white hover:drop-shadow-[0_4px_7px_rgba(250,204,21,1)]  duration-300 hover:text-yellow-400 my-7 flex justify-center text-3xl text-white'><PiStudentBold /></h5>
 
                             </Link>
 
