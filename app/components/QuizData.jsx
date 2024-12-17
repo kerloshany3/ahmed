@@ -213,6 +213,11 @@ const QuizData = ({ params }) => {
                     <div className=' backdrop-blur-3xl rounded-xl  p-6'>
                         <h1 className='font-arabicUI3 text-6xl text-center text-white'>نتيجتك: {score}/{enrolquiz?.question?.length}</h1>
 
+                        <div className=' m-6'>
+                            <ProgCircle nsaba={(score/enrolquiz?.question?.length)*100}></ProgCircle>
+
+                        </div>
+
                         <div className=' grid grid-cols-3'>
                             {enrolquiz?.question?.map((item, index) => (
                                 <div key={index}>
@@ -258,17 +263,11 @@ const QuizData = ({ params }) => {
                                 </div>
 
 
-
-                                
-                                
-
-
-
                             ))}
 
                         </div>
 
-                           
+
                         <Link href='/'>
                             <div className=' text-7xl text-white p-5 flex justify-center mx-auto m-6 font-arabicUI2 bg-white/20 w-fit  rounded-xl outline-1 outline-white outline-dashed'>
                                 <h1>الصفحة الرئيسية</h1>

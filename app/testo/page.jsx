@@ -3,7 +3,7 @@ import ProgCircle from '../components/ProgCircle'
 
 const page = () => {
     return (
-        <div className=' bg-white'>
+        <div className=''>
             <ProgCircle></ProgCircle>
             
         </div>
