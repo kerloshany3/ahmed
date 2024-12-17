@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 import { BiSolidPencil } from "react-icons/bi";
 
 import Swal from "sweetalert2";
+import ProgCircle from './ProgCircle';
 
 const QuizData = ({ params }) => {
 
@@ -258,6 +259,8 @@ const QuizData = ({ params }) => {
 
 
 
+                                
+                                
 
 
 
@@ -265,6 +268,7 @@ const QuizData = ({ params }) => {
 
                         </div>
 
+                           
                         <Link href='/'>
                             <div className=' text-7xl text-white p-5 flex justify-center mx-auto m-6 font-arabicUI2 bg-white/20 w-fit  rounded-xl outline-1 outline-white outline-dashed'>
                                 <h1>الصفحة الرئيسية</h1>
