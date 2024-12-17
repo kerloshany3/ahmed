@@ -36,13 +36,7 @@ const getcourseinfo = async (courseid) => {
      quiz {
         id
         quiztitle
-        question {
-          opationA
-          opationB
-          opationD
-          opationC
-          qus
-        }
+       
       }
    chapterMood {
       chaptervideo {
@@ -117,9 +111,41 @@ const EnrollmentUsers = async (userEmail) => {
   return result4;
 }
 
+const getQuizDataWithEnroll = async (userEmail, quizId) => {
+
+  const query5 = gql`
+  query MyQuery {
+  userEnrolls(
+    where: {userEmail: "`+userEmail+`", isHePaid: true, course: {quiz_every: {id: "`+quizId+`"}}}
+  ) {
+    id
+    courseid
+    userEmail
+    course {
+      quiz(where: {id: "`+quizId+`"}) {
+        quiztitle
+        question {
+          opationA
+          opationB
+          opationD
+          opationC
+          qus
+        }
+      }
+    }
+  }
+}
+  
+  `
+  const result5 = await request(MASTER_URL, query5)
+  return result5
+
+}
+
 export default {
   getAllCourseList,
   getcourseinfo,
   sendEnrollData,
-  EnrollmentUsers
+  EnrollmentUsers,
+  getQuizDataWithEnroll,
 }

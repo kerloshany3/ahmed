@@ -1,10 +1,12 @@
-import React from 'react'
+import QuizData from "@/app/components/QuizData"
+import React from "react"
+
 
 const page = ({ params }) => {
-    
-    const {quizid} = React.use(params)
+
+
   return (
-    <div>{quizid}</div>
+   <QuizData params={params}></QuizData>
   )
 }
 
