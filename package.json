@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.9.2",
+    "@nextui-org/progress": "^2.2.4",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
     "next": "15.0.4",
