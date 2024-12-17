@@ -29,7 +29,7 @@ const Hero = () => {
 
                     <div className=''>
                         <h1 className=' max-md:text-4xl  max-md:mr-7 dark:text-slate-400 text-5xl my-4 flex justify-end'>
-                            <span className='font-abril  max-md:text-5xl max-md:mt-1 text-7xl -mt-3 mr-3 text-red-500 flex justify-start'>2025</span>
+                            <span className='  max-md:text-5xl max-md:mt-1 text-7xl -mt-3 mr-3 text-red-500 flex justify-start'>2025</span>
                             يرحب بدفعه </h1>
 
                         <h1 className='  text-right leading-relaxed max-md:mr-6 dark:text-slate-400 max-md:leading-relaxed max-md:text-right text-5xl'>لشرح منهج <span className=' hover:scale-90 duration-300 text-red-600'>
