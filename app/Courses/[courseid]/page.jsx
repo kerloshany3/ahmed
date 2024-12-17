@@ -63,14 +63,14 @@ const page = ({ params }) => {
     return (
 
         <div className=' font-arabicUI bg-brain-image rounded-xl shadow-2xl shadow-white/15 p-5'>
-            <div className={`  h-fit max-sm:w-fit  outline-dashed outline-2 outline-white  backdrop-blur-2xl bg-gradient-to-l shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl `}>
+            <div className={`  h-fit max-sm:w-fit  outline-dashed outline-2 outline-white  backdrop-blur-3xl bg-black/30 bg-gradient-to-l shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl `}>
                 <h3 className=' leading-relaxed max-sm:text-3xl text-5xl text-right  text-white '>{courseInfo.nameofcourse} </h3>
                 <p className=' my-10 font-arabicUI3 max-sm:text-lg text-2xl whitespace-pre-wrap text-white/90 text-right'>{courseInfo.description}</p>
             </div>
 
             <div className='grid max-sm:grid-cols-1 max-md:grid-cols-1 max-lg:grid-cols-1 grid-cols-3'>
                 <div>
-                    <div className={`   h-fit max-sm:w-fit  bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white bg-white/10 backdrop-blur-3xl`}>
+                    <div className={`   h-fit max-sm:w-fit  bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white backdrop-blur-3xl bg-black/5`}>
                         <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl max-xl:text-3xl'>محتوي الكورس</h2>
 
 
