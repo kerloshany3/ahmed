@@ -5,7 +5,7 @@ import { MdDeleteForever } from "react-icons/md";
 
 const Content = () => {
     return (
-        <div className=' mt-9   font-arabicUI3 text-center  '>
+        <div className=' mt-9   font-arabicUI3 text-center  cursor-default '>
             <div className=' bg-red-500 max-md:w-fit max-md:scale-90 flex p-3 rounded-2xl  max-md:grid  shadow-xl shadow-red-500/50'>
                 <div className=' max-md:w-fit w-1/3 bg-red-200 rounded-lg outline-dashed outline-red-200 outline-offset-4 h-36 max-md:h-fit flex justify-center p-5 m-6'>
                     <div className=' flex justify-center m-auto'>

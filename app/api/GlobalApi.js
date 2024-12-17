@@ -33,6 +33,17 @@ const getcourseinfo = async (courseid) => {
     color
     isfree
     nicknameforcourse
+     quiz {
+        id
+        quiztitle
+        question {
+          opationA
+          opationB
+          opationD
+          opationC
+          qus
+        }
+      }
    chapterMood {
       chaptervideo {
         url
@@ -55,7 +66,7 @@ const sendEnrollData = async (courseid, userEmail, phonenumber) => {
   
   mutation MyMutation {
   createUserEnroll(
-    data: {course: {connect: {nicknameforcourse: "`+courseid+`"}}, isHePaid: false, userEmail: "`+userEmail+`", courseid: "`+courseid+`", phonenumber: "`+phonenumber+`"}
+    data: {course: {connect: {nicknameforcourse: "`+ courseid + `"}}, isHePaid: false, userEmail: "` + userEmail + `", courseid: "` + courseid + `", phonenumber: "` + phonenumber + `"}
   ) {
     id
     course {
@@ -82,7 +93,7 @@ const sendEnrollData = async (courseid, userEmail, phonenumber) => {
 const EnrollmentUsers = async (userEmail) => {
   const query4 = gql`
   query MyQuery {
-  userEnrolls(where: {userEmail: "`+userEmail+`", isHePaid: true}) {
+  userEnrolls(where: {userEmail: "`+ userEmail + `", isHePaid: true}) {
     isHePaid
     phonenumber
     id
@@ -96,6 +107,7 @@ const EnrollmentUsers = async (userEmail) => {
       dataofcourse
       description
       isfree
+      
     }
   }
 }
