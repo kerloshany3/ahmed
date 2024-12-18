@@ -12,10 +12,10 @@ import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgr
 
 
 
-const ProgCircle = ({nsaba}) => {
+const ProgCircle = ({nsaba,hight = 30}) => {
 
     const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-        height: 30,
+        height: hight,
         borderRadius: 20,
         [`&.${linearProgressClasses.colorPrimary}`]: {
             backgroundColor: theme.palette.grey[200],

@@ -29,12 +29,13 @@ const QuizV = () => {
             </div>
 
             < div className=' grid rtl-grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3 grid-cols-6'>
-                 {quiz.map((item,index) => (
+                 {quiz.slice().reverse().map((item,index) => (
                     <div key={index} className=' m-5 h-fit backdrop-blur-2xl shadow-white/10 outline-dashed outline-white outline-2 shadow-xl  p-5 rounded-xl'>
                         <div className=''>
-                            <h4 className=' font-arabicUI2 text-white text-2xl mb-4'>{item?.nameofquiz}</h4>
-                             <p className=' font-arabicUI3 text-white/80 text-sm'>{item?.quizGrade}</p>
-                             <ProgCircle nsaba={(item?.quizGrade/item?.numofqus)*100}></ProgCircle>
+                            <h4 className=' font-arabicUI2 text-center text-white text-2xl mb-4'>{item?.nameofquiz}</h4>
+                             <p className=' font-arabicUI3 text-white/80 my-4 flex justify-center mx-auto text-4xl'>{(item?.quizGrade/item?.numofqus)*100}%</p>
+                             <ProgCircle hight={10} nsaba={(item?.quizGrade/item?.numofqus)*100
+                             }></ProgCircle>
                         </div>
                     </div>
                 ))} 
