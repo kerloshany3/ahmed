@@ -20,7 +20,7 @@ const Header = () => {
     }
 
     return (
-        <div className=' max-sm:scale-90 font-arabicUI flex justify-between'>
+        <div className=' select-none max-sm:scale-90 font-arabicUI flex justify-between'>
 
 
 

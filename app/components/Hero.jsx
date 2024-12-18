@@ -5,13 +5,13 @@ import { GiTakeMyMoney } from "react-icons/gi";
 const Hero = () => {
     return (
         <div>
-            <div className=" relative flex justify-between">
+            <div className=" select-none relative flex justify-between">
 
 
-                <img className=' absolute -top-96 flex inset-0 rotate-45 -z-20 -left-80 ' width={2000} src='/dna.svg' alt="" />
+                <img className=' absolute  -top-96 flex inset-0 rotate-45 -z-20 -left-80 ' width={2000} src='/dna.svg' alt="" />
                 <div className=" flex justify-end">
 
-                    <img src="/imageAhmed.png" width={600} height={200} className=' drop-shadow-2xl max-md:hidden'></img>
+                    <img src="/imageAhmed.png" width={600} height={200} className=' drop-shadow-2xl  max-md:hidden'></img>
 
 
                 </div>
@@ -51,7 +51,7 @@ const Hero = () => {
                     </div>
 
                     <div className='  flex m-auto shadow-2xl shadow-yellow-400 rounded-xl bg-yellow-400 p-4  w-fit  '>
-                        <h2 className=' flex max-md:text-xl max-md:h-fit  text-4xl text-black justify-end 3'> <span className='text-5xl'><GiTakeMyMoney /></span>
+                        <h2 className=' flex max-md:text-xl max-md:h-fit  text-4xl text-slate-950 justify-end 3'> <span className='text-5xl'><GiTakeMyMoney /></span>
                             خصم علي كورس التكاثر الان</h2>
                     </div>
                 </div>
