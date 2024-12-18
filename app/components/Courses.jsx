@@ -21,7 +21,6 @@ const Courses = () => {
 
     const getallcoures = () => {
         GlobalApi.getAllCourseList().then(res => {
-            console.log(res.courses)
             setdatacourse(res.courses)
         })
     }

@@ -87,9 +87,8 @@ const QuizData = ({ params }) => {
         return answersofQuiz[index];
     };
 
-    console.log("hi", answersofQuiz[0])
-
-    console.log(answersofQuiz)
+  
+    
 
     const calculateScore = () => {
         let calculatedScore = 0;
@@ -106,22 +105,22 @@ const QuizData = ({ params }) => {
 
 
     const trueChoices = enrolquiz?.question?.map((item) => item.trueChoisevip.toUpperCase()) || [];
-    console.log(trueChoices)
+    
+    
 
 
 
     const results = trueChoices.map((answer, index) => {
         return answersofQuiz[index] === answer; // Returns true if correct, false otherwise
     });
-    console.log(results)
+    
 
 
 
     const results2 = trueChoices.map((answer, index) => {
         return answer; // Returns true if correct, false otherwise
     });
-    console.log(results2)
-
+    
 
 
     const handleSumbit = () => {
@@ -144,9 +143,8 @@ const QuizData = ({ params }) => {
                             email, user?.fullName, finalScore,enrolquiz.quiztitle,enrolquiz?.question?.length
 
                         );
-
-                        console.log("Save Grades Response:", response);
-
+                        
+                        
                         // Notify the user of successful submission
                         Swal.fire({
                             title: "تم التسليم بنجاح!",

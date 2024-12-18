@@ -20,7 +20,8 @@ const Page = ({ params }) => {
         setLoading(true); // Start loading when fetching course data
         try {
             const res = await GlobalApi.getcourseinfo(idpay);
-            console.log(res.course);
+           
+            
             setCourseInfo(res.course);
         } catch (error) {
             console.error("Error fetching course info:", error);

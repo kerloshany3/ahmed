@@ -28,7 +28,8 @@ const page = ({ params }) => {
 
     const getallcoures = () => {
         GlobalApi.getcourseinfo(courseid).then(res => {
-            console.log(res.course.chapterMood)
+           
+            
             setCourseInfo(res.course)
             setcourseVideoChapters(res.course.chapterMood)
         })
@@ -39,25 +40,23 @@ const page = ({ params }) => {
 
     const { user } = useUser()
     const [EnrollDAta, setEnrollData] = useState([])
-    console.log(user?.primaryEmailAddress?.emailAddress)
+    
     useEffect(() => {
         user?.primaryEmailAddress?.emailAddress && EnrooolUser(user?.primaryEmailAddress?.emailAddress)
     }, [user?.primaryEmailAddress?.emailAddress])
 
     const EnrooolUser = () => {
         GlobalApi.EnrollmentUsers(user?.primaryEmailAddress?.emailAddress).then(res => {
-            console.log(res.userEnrolls[0])
+            
+            
             setEnrollData(res.userEnrolls)
         })
     }
 
-    console.log("thiscourses", courseInfo)
-
-
-
-
+    
     const filteredcourse = EnrollDAta.filter(item => item?.course?.nicknameforcourse === courseInfo.nicknameforcourse)
-    console.log("this:", filteredcourse)
+    
+    
     const isCourseFound = filteredcourse.length > 0;
 
     const handlechapterClick = (index) => {

@@ -16,7 +16,8 @@ const QuizV = () => {
 
     const quizdata = () => {
         GlobalApi.vquiz(email).then(res => {
-            console.log(res)
+            
+            
             setQuiz(res.quizresults)
         })
     }

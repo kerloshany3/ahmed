@@ -14,8 +14,7 @@ const Subs = () => {
 
     const [EnrollDAta, setEnrollData] = useState([])
 
-    console.log(user?.primaryEmailAddress?.emailAddress)
-
+    
     useEffect(() => {
         user?.primaryEmailAddress?.emailAddress && EnrooolUser(user?.primaryEmailAddress?.emailAddress)
     }, [user?.primaryEmailAddress?.emailAddress])
@@ -25,7 +24,8 @@ const Subs = () => {
 
     const EnrooolUser = () => {
         GlobalApi.EnrollmentUsers(user?.primaryEmailAddress?.emailAddress).then(res => {
-            console.log(res.userEnrolls[0])
+          
+            
             setEnrollData(res.userEnrolls)
         })
     }
