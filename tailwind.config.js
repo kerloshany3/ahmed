@@ -17,7 +17,9 @@ module.exports = {
         'custom-image': "url('/dna.png')",
         'brain-image': "url('/brain.jpeg')",
         'blood-image': "url('/blood.jpeg')",
+        'biopat-image': "url('/biopat.png')",
         'blod2-image': "url('/blod2.jpeg')",
+        'pattern-image': "url('/pattern.png')",
       },
       direction: {
         rtl: 'rtl', // Right-to-left

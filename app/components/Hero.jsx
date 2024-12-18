@@ -5,8 +5,10 @@ import { GiTakeMyMoney } from "react-icons/gi";
 const Hero = () => {
     return (
         <div>
-            <div className=" flex justify-between">
+            <div className=" relative flex justify-between">
 
+
+                <img className=' absolute -top-96 flex inset-0 rotate-45 -z-20 -left-80 ' width={2000} src='/dna.svg' alt="" />
                 <div className=" flex justify-end">
 
                     <img src="/imageAhmed.png" width={600} height={200} className=' drop-shadow-2xl max-md:hidden'></img>

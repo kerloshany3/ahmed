@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react'
 import { FaBookmark } from "react-icons/fa";
 import GlobalApi from '../api/GlobalApi';
 import Link from 'next/link';
+import { FaPlay } from "react-icons/fa";
+
 
 const Courses = () => {
 
@@ -50,7 +52,7 @@ const Courses = () => {
                             <Link href={`/Courses/${item?.nicknameforcourse}`} >
                                 <div className={`   shadow-xl font-arabicUI2 w-fit max-2xl:text-4xl max-lg:text-3xl text-4xl m-auto flex justify-center p-3 my-8 hover:bg-black/40 bg-white/10 rounded-xl      
                                  text-white
-                                 outline-dashed outline-2 outline-offset-4 max-md:text-3xl  max-md:mt-5 hover:scale-110  duration-500 `}   >مشاهده الكورس</div>
+                                 outline-dashed outline-2 outline-offset-4 max-md:text-3xl  max-md:mt-5 hover:scale-110  duration-500 `}   > مشاهده الكورس <div className=' scale-90 mr-2'><FaPlay></FaPlay></div> </div>
                                 {!item.isfree ?
                                     <h1 className=' text-5xl rounded-lg  drop-shadow-2xl  text-white justify-center flex p-4 m-auto  font-arabicUI3'>
                                         <span>{item.price}</span>جنيه</h1> :
