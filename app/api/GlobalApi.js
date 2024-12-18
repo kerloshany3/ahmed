@@ -116,13 +116,13 @@ const getQuizDataWithEnroll = async (userEmail, quizId) => {
   const query5 = gql`
   query MyQuery {
   userEnrolls(
-    where: {userEmail: "`+userEmail+`", isHePaid: true, course: {quiz_every: {id: "`+quizId+`"}}}
+    where: {userEmail: "`+ userEmail + `", isHePaid: true, course: {quiz_every: {id: "` + quizId + `"}}}
   ) {
     id
     courseid
     userEmail
     course {
-      quiz(where: {id: "`+quizId+`"}) {
+      quiz(where: {id: "`+ quizId + `"}) {
         quiztitle
         question {
           opationA
@@ -143,10 +143,34 @@ const getQuizDataWithEnroll = async (userEmail, quizId) => {
 
 }
 
+const SaveGradesOfQuiz = async(userEmail, uerName, userGrade,quizname) => {
+  const query6 = gql`
+  
+  mutation MyMutation {
+  createQuizresult(
+    data: {userEmail: "`+userEmail+`", userName: "`+uerName+`", quizGrade: `+userGrade+`,nameofquiz: "`+quizname+`"}
+  ) {
+    id
+  }
+  publishManyQuizresultsConnection {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}
+  `
+
+  const reslut6 = await request(MASTER_URL, query6)
+  return reslut6
+}
+
 export default {
   getAllCourseList,
   getcourseinfo,
   sendEnrollData,
   EnrollmentUsers,
   getQuizDataWithEnroll,
+  SaveGradesOfQuiz,
 }

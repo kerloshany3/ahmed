@@ -91,19 +91,18 @@ const QuizData = ({ params }) => {
 
     console.log(answersofQuiz)
 
-
     const calculateScore = () => {
-        let score = 0;
+        let calculatedScore = 0;
 
         enrolquiz?.question?.forEach((item, index) => {
             if (answersofQuiz[index] === item.trueChoisevip.toUpperCase()) {
-                score += 1;
+                calculatedScore += 1;
             }
         });
 
-        setScore(score); // Update the score state
+        setScore(calculatedScore); // Update the state (for UI purposes)
+        return calculatedScore; // Return the score immediately for use
     };
-
 
 
     const trueChoices = enrolquiz?.question?.map((item) => item.trueChoisevip.toUpperCase()) || [];
@@ -125,7 +124,6 @@ const QuizData = ({ params }) => {
 
 
 
-
     const handleSumbit = () => {
         Swal.fire({
             title: "متاكد انك عاوز تسلم الامتحان ؟",
@@ -134,19 +132,48 @@ const QuizData = ({ params }) => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "تسليم الامتحان"
+            confirmButtonText: "تسليم الامتحان",
         }).then((result) => {
             if (result.isConfirmed) {
-                calculateScore(); // Calculate the score before showing results
-                setShowResults(true); // Toggle to show results
-                Swal.fire({
-                    title: "تم التسليم بنجاح!",
-                    text: "انا فخور بيك انك حاولت مهما كانت النتيجة",
-                    icon: "success"
-                });
+                const finalScore = calculateScore(); // Calculate the score immediately
+
+                // Save the grade to the server
+                const saveGrade = async () => {
+                    try {
+                        const response = await GlobalApi.SaveGradesOfQuiz(
+                            email, user?.fullName, finalScore,enrolquiz.quiztitle
+
+                        );
+
+                        console.log("Save Grades Response:", response);
+
+                        // Notify the user of successful submission
+                        Swal.fire({
+                            title: "تم التسليم بنجاح!",
+                            text: "انا فخور بيك انك حاولت مهما كانت النتيجة",
+                            icon: "success",
+                        });
+
+                        setShowResults(true); // Show results page
+                    } catch (error) {
+                        console.error("Failed to save grades:", error);
+
+                        Swal.fire({
+                            title: "خطأ!",
+                            text: "حدث خطأ أثناء حفظ النتائج. حاول مرة أخرى لاحقًا.",
+                            icon: "error",
+                        });
+                    }
+                };
+
+                saveGrade(); // Call the save grade function
             }
         });
     };
+
+
+
+
 
     return (
         <div>
@@ -214,7 +241,7 @@ const QuizData = ({ params }) => {
                         <h1 className='font-arabicUI3 text-6xl text-center text-white'>نتيجتك: {score}/{enrolquiz?.question?.length}</h1>
 
                         <div className=' m-6'>
-                            <ProgCircle nsaba={(score/enrolquiz?.question?.length)*100}></ProgCircle>
+                            <ProgCircle nsaba={(score / enrolquiz?.question?.length) * 100}></ProgCircle>
 
                         </div>
 
