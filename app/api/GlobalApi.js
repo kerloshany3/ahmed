@@ -143,12 +143,12 @@ const getQuizDataWithEnroll = async (userEmail, quizId) => {
 
 }
 
-const SaveGradesOfQuiz = async(userEmail, uerName, userGrade,quizname) => {
+const SaveGradesOfQuiz = async(userEmail, uerName, userGrade,quizname,numofqus) => {
   const query6 = gql`
   
   mutation MyMutation {
   createQuizresult(
-    data: {userEmail: "`+userEmail+`", userName: "`+uerName+`", quizGrade: `+userGrade+`,nameofquiz: "`+quizname+`"}
+    data: {userEmail: "`+userEmail+`", userName: "`+uerName+`", quizGrade: `+userGrade+`,nameofquiz: "`+quizname+`",numofqus:`+numofqus+`}
   ) {
     id
   }

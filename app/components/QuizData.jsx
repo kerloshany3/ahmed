@@ -141,7 +141,7 @@ const QuizData = ({ params }) => {
                 const saveGrade = async () => {
                     try {
                         const response = await GlobalApi.SaveGradesOfQuiz(
-                            email, user?.fullName, finalScore,enrolquiz.quiztitle
+                            email, user?.fullName, finalScore,enrolquiz.quiztitle,enrolquiz?.question?.length
 
                         );
 
