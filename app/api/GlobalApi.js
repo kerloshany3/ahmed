@@ -166,6 +166,26 @@ const SaveGradesOfQuiz = async(userEmail, uerName, userGrade,quizname,numofqus) 
   return reslut6
 }
 
+const vquiz = async (userEmail) => {
+  const qmon = gql`
+  
+  
+query MyQuery {
+  quizresults(where: {userEmail: "`+userEmail+`"}) {
+    id
+    quizGrade
+    userName
+    nameofquiz
+    numofqus
+  }
+}
+
+  `
+
+  const quizres = await request(MASTER_URL, qmon)
+  return quizres;
+}
+
 export default {
   getAllCourseList,
   getcourseinfo,
@@ -173,4 +193,5 @@ export default {
   EnrollmentUsers,
   getQuizDataWithEnroll,
   SaveGradesOfQuiz,
+  vquiz,
 }
