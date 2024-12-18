@@ -7,6 +7,7 @@ import { FaBookmark } from "react-icons/fa";
 import GlobalApi from '../api/GlobalApi';
 import Link from 'next/link';
 import { FaPlay } from "react-icons/fa";
+import { BsPatchCheckFill } from "react-icons/bs";
 
 
 const Courses = () => {
@@ -33,7 +34,7 @@ const Courses = () => {
             <div>
                 <div>
                     <div className=' max-sm:justify-start  flex justify-end my-16'>
-                        <h3 className='  max-md:text-5xl flex text-6xl dark:text-white text-slate-800'><span className=' mx-4'><FaBookmark />
+                        <h3 className='  max-md:text-5xl flex text-6xl text-white '><span className=' mx-4'><FaBookmark />
                         </span>الكورسات</h3>
                     </div>
                 </div>

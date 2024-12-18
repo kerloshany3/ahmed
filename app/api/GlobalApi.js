@@ -152,7 +152,9 @@ const SaveGradesOfQuiz = async(userEmail, uerName, userGrade,quizname,numofqus) 
   ) {
     id
   }
-  publishManyQuizresultsConnection {
+
+  
+  publishManyQuizresultsConnection (first: 1000) {
     edges {
       node {
         id
