@@ -143,16 +143,17 @@ const getQuizDataWithEnroll = async (userEmail, quizId) => {
 
 }
 
-const SaveGradesOfQuiz = async(userEmail, uerName, userGrade,quizname,numofqus) => {
+const SaveGradesOfQuiz = async (userEmail, uerName, userGrade, quizname, numofqus) => {
   const query6 = gql`
   
   mutation MyMutation {
   createQuizresult(
-    data: {userEmail: "`+userEmail+`", userName: "`+uerName+`", quizGrade: `+userGrade+`,nameofquiz: "`+quizname+`",numofqus:`+numofqus+`}
+    data: {userEmail: "`+ userEmail + `", userName: "` + uerName + `", quizGrade: ` + userGrade + `,nameofquiz: "` + quizname + `",numofqus:` + numofqus + `}
   ) {
     id
   }
 
+  
   
   publishManyQuizresultsConnection (first: 10000) {
     edges {
@@ -173,7 +174,7 @@ const vquiz = async (userEmail) => {
   
   
 query MyQuery {
-  quizresults(where: {userEmail: "`+userEmail+`"}) {
+  quizresults(where: {userEmail: "`+ userEmail + `"}) {
     id
     quizGrade
     userName
@@ -199,12 +200,54 @@ const data4admin = async () => {
       price
       updatedAt
     }
+    isHePaid
+    id
   }
 }
   `
 
   const admindata = await request(MASTER_URL, dataa4admin)
   return admindata
+}
+
+const editStateSub = async (idofEnroll,ActiveOrDeactive) => {
+  const query9 = gql`
+  mutation MyMutation {
+  updateUserEnroll(
+    data: {isHePaid: `+ActiveOrDeactive+`}
+    where: {id: "`+ idofEnroll + `"}
+  ) {
+    id
+  }
+}
+  
+
+
+
+
+`
+
+  const state4 = await request(MASTER_URL, query9)
+  return state4;
+
+
+}
+
+const publishEnrolls = async () => {
+  const wie = gql`
+   mutation MyMutation {
+  publishManyUserEnrollsConnection {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}
+    `
+  
+  const back = await request(MASTER_URL, wie)
+  return back
 }
 
 export default {
@@ -215,5 +258,9 @@ export default {
   getQuizDataWithEnroll,
   SaveGradesOfQuiz,
   vquiz,
-  data4admin
+  data4admin,
+  editStateSub,
+  publishEnrolls
+
+
 }

@@ -7,7 +7,6 @@ import { FaBookmark } from "react-icons/fa";
 import GlobalApi from '../api/GlobalApi';
 import Link from 'next/link';
 import { FaPlay } from "react-icons/fa";
-import { BsPatchCheckFill } from "react-icons/bs";
 
 
 const Courses = () => {
