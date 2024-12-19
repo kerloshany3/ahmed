@@ -1,0 +1,29 @@
+"filename", "language", "JavaScript JSX", "CSS", "JavaScript", "comment", "blank", "total"
+"d:\amon\app\Courses\[courseid]\page.jsx", "JavaScript JSX", 133, 0, 0, 0, 81, 214
+"d:\amon\app\adminPanel\page.jsx", "JavaScript JSX", 10, 0, 0, 0, 2, 12
+"d:\amon\app\api\GlobalApi.js", "JavaScript", 0, 0, 215, 0, 51, 266
+"d:\amon\app\components\Admin.jsx", "JavaScript JSX", 244, 0, 0, 2, 57, 303
+"d:\amon\app\components\AdminContent.jsx", "JavaScript JSX", 24, 0, 0, 0, 4, 28
+"d:\amon\app\components\Content.jsx", "JavaScript JSX", 31, 0, 0, 0, 2, 33
+"d:\amon\app\components\Courses.jsx", "JavaScript JSX", 55, 0, 0, 0, 15, 70
+"d:\amon\app\components\EnrollmentSection.jsx", "JavaScript JSX", 63, 0, 0, 0, 30, 93
+"d:\amon\app\components\Footer.jsx", "JavaScript JSX", 32, 0, 0, 0, 9, 41
+"d:\amon\app\components\Header.jsx", "JavaScript JSX", 64, 0, 0, 1, 33, 98
+"d:\amon\app\components\Hero.jsx", "JavaScript JSX", 45, 0, 0, 0, 22, 67
+"d:\amon\app\components\ProgCircle.jsx", "JavaScript JSX", 36, 0, 0, 0, 13, 49
+"d:\amon\app\components\QuizData.jsx", "JavaScript JSX", 235, 0, 0, 12, 62, 309
+"d:\amon\app\components\QuizV.jsx", "JavaScript JSX", 38, 0, 0, 0, 12, 50
+"d:\amon\app\components\Subs.jsx", "JavaScript JSX", 50, 0, 0, 0, 27, 77
+"d:\amon\app\components\SweetNoti.jsx", "JavaScript JSX", 32, 0, 0, 1, 4, 37
+"d:\amon\app\components\ThemeToggle.jsx", "JavaScript JSX", 33, 0, 0, 2, 12, 47
+"d:\amon\app\components\VideoPlayer.jsx", "JavaScript JSX", 20, 0, 0, 0, 5, 25
+"d:\amon\app\globals.css", "CSS", 0, 6, 0, 0, 10, 16
+"d:\amon\app\layout.jsx", "JavaScript JSX", 50, 0, 0, 2, 16, 68
+"d:\amon\app\page.jsx", "JavaScript JSX", 15, 0, 0, 0, 14, 29
+"d:\amon\app\payment\[idpay]\page.jsx", "JavaScript JSX", 155, 0, 0, 0, 26, 181
+"d:\amon\app\quiz\[quizid]\page.jsx", "JavaScript JSX", 8, 0, 0, 0, 5, 13
+"d:\amon\app\sign-in\[[...sign-in]]\page.jsx", "JavaScript JSX", 77, 0, 0, 6, 12, 95
+"d:\amon\app\sign-up\[[...sign-up]]\page.jsx", "JavaScript JSX", 77, 0, 0, 6, 12, 95
+"d:\amon\app\subscriptions\page.jsx", "JavaScript JSX", 10, 0, 0, 0, 6, 16
+"d:\amon\app\testo\page.jsx", "JavaScript JSX", 9, 0, 0, 0, 5, 14
+"Total", "-", 1546, 6, 215, 32, 547, 2346

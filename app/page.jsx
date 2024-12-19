@@ -17,12 +17,13 @@ export default function Home() {
 
 
     <div className=" font-arabicUI">
-      
+
       <Hero></Hero>
-      
-      
+
+
       <Content></Content>
-      <Courses></Courses>
+      
+      <Courses></Courses> 
     </div>
   );
 }

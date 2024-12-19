@@ -12,7 +12,7 @@ const Footer = () => {
       <div className=' flex justify-center'>
 
         <div>
-          <div className=' flex justify-center gap-8 text-slate-500 text-5xl'>
+          <div className=' flex justify-center gap-8 text-slate-500 max-sm:text-4xl text-5xl'>
             <FaFacebook />
             <BsWhatsapp />
             <FaYoutube />
@@ -20,7 +20,7 @@ const Footer = () => {
 
           </div>
 
-          <h3 className=' place-items-center flex justify-center w-full font-anton text-3xl m-auto text-slate-600 mt-10'>
+          <h3 className=' place-items-center flex justify-center w-full font-anton  max-sm:text-xl text-3xl m-auto text-slate-600 mt-10'>
             <span className=' mx-3'>
               <FaFileCode />
             </span>

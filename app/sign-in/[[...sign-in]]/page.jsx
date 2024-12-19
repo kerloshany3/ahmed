@@ -3,15 +3,11 @@ import { SignIn } from '@clerk/nextjs'
 
 const page = () => {
     return (
-        <div className=' mt-10'>
-            {/*
-  Heads up! 👋
+        <div className=' m-10'>
+         
+            
 
-  Plugins:
-    - @tailwindcss/forms
-*/}
-
-            <section className=" rounded-xl bg-[url('/dna.png')] bg-center bg-cover ">
+            <section className=" max-lg:hidden rounded-xl bg-[url('/dna.png')] bg-center bg-cover ">
                 <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                     <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
                         <img
@@ -41,7 +37,7 @@ const page = () => {
                             </h2>
 
                             <p className="mt-4 leading-relaxed text-white/90">
-                            The Biology LMS is your hub for exploring the science of life through interactive resources and comprehensive study materials. From molecular biology to ecosystems, it offers tools and content to enhance your understanding and engagement with biology.
+                                The Biology LMS is your hub for exploring the science of life through interactive resources and comprehensive study materials. From molecular biology to ecosystems, it offers tools and content to enhance your understanding and engagement with biology.
                             </p>
                         </div>
                     </section>
@@ -82,12 +78,16 @@ const page = () => {
                             <div className='  text-4xl '>
                             <SignIn></SignIn>
                             </div>
-                               
+
 
                         </div>
                     </main>
                 </div>
             </section>
+            <div className=' hidden max-lg:flex m-auto  justify-center '>
+                <SignIn></SignIn>
+            </div>
+
         </div>
     )
 }
