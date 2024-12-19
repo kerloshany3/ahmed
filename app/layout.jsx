@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body
-          className={` dark:bg-slate-900   antialiased`}
+          className={` dark:bg-slate-950   antialiased`}
         >
 
 

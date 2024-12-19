@@ -7,10 +7,16 @@ const Admin = () => {
     const [email, setEmail] = useState('');
     const [activeEmail, SetActiveEmail] = useState(-1);
     const [filteredData, setFilteredData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1); 
+    const [currentPage, setCurrentPage] = useState(1);
     const [searchEmail, setSearchEmail] = useState('');
+    const [password, setPassworod] = useState(false)
+    const [adminpass, setAdminPass] = useState('')
     const emailsPerPage = 5; // Emails to show per page
 
+    const handleinputpass = (e) => {
+        setAdminPass(e.target.value)
+        {adminpass === "135792468" && setPassworod(true)}
+    }
     console.log(filteredData)
     const handleSelectEmail = (item, index) => {
         setEmail(item);
@@ -48,7 +54,7 @@ const Admin = () => {
         // Format the date as y/m/d
         return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
     };
-    
+
     const getDataForEmail = (email) => {
         const userData = numOfStu.filter((item) => item.userEmail === email);
 
@@ -93,92 +99,116 @@ const Admin = () => {
     };
 
     return (
+
         <div className="select-none rounded-2xl mt-8 bg-admin-imag bg-cover bg-center">
             <h2 className="font-arabicUI3 pt-10 text-white text-5xl p-5 m-auto flex justify-center">
                 لوحة الادمن
             </h2>
+            {password ? (<>
 
-            <div className="grid gap-5 p-5 rtl-grid grid-cols-5">
-                {/* Number of Students */}
-                <div className="border-4 rounded-xl h-fit mx-auto m-4">
-                    <h3 className="p-2 text-center font-arabicUI3 leading-normal text-5xl text-white">
-                        عدد الطلاب المشتركين فكورسات
-                    </h3>
-                    <h3 className="p-2 text-center font-arabicUI3 flex justify-between text-6xl text-blue-950 bg-white m-4 rounded-xl">
-                        <span>طالب</span>
-                        <span className="m-auto">{uniqueEmails.length}</span>
-                    </h3>
-                </div>
 
-             
-                
-                <div className="border-4 rounded-xl col-span-2 m-4">
-                    <h3 className="p-2 text-center font-arabicUI3 leading-normal text-5xl text-white">
-                        ايميلات الطلاب المشتركين فكورسات
-                    </h3>
-                    <input
-                        value={searchEmail}
-                        onChange={(e) => setSearchEmail(e.target.value)}
-                        type="text"
-                        placeholder="بحث بالايميل.."
-                        className="text-left p-2 text-4xl w-4/5 flex justify-center mx-auto font-arabicUI3 rounded-xl m-5"
-                    />
-                    {paginatedEmails.map((item, index) => (
-                        <h3
-                            onClick={() => handleSelectEmail(item, index)}
-                            key={index}
-                            className={`${
-                                activeEmail === index
+                <div className="grid gap-5 p-5 rtl-grid grid-cols-5">
+                    {/* Number of Students */}
+                    <div className="border-4 rounded-xl h-fit mx-auto m-4">
+                        <h3 className="p-2 text-center font-arabicUI3 leading-normal text-5xl text-white">
+                            عدد الطلاب المشتركين فكورسات
+                        </h3>
+                        <h3 className="p-2 text-center font-arabicUI3 flex justify-between text-6xl text-blue-950 bg-white m-4 rounded-xl">
+                            <span>طالب</span>
+                            <span className="m-auto">{uniqueEmails.length}</span>
+                        </h3>
+                    </div>
+
+
+
+                    <div className="border-4 rounded-xl col-span-2 m-4">
+                        <h3 className="p-2 text-center font-arabicUI3 leading-normal text-5xl text-white">
+                            ايميلات الطلاب المشتركين فكورسات
+                        </h3>
+                        <input
+                            value={searchEmail}
+                            onChange={(e) => setSearchEmail(e.target.value)}
+                            type="text"
+                            placeholder="بحث بالايميل.."
+                            className="text-left p-2 text-4xl w-4/5 flex justify-center mx-auto font-arabicUI3 rounded-xl m-5"
+                        />
+                        {paginatedEmails.map((item, index) => (
+                            <h3
+                                onClick={() => handleSelectEmail(item, index)}
+                                key={index}
+                                className={`${activeEmail === index
                                     ? 'bg-green-500 text-white'
                                     : 'text-blue-950 bg-white'
-                            } cursor-pointer duration-300 text-right p-2 transition justify-end font-arabicUI3 flex text-4xl m-4 rounded-xl`}
-                        >
-                            <span className="m-auto">{item}</span>
+                                    } cursor-pointer duration-300 text-right p-2 transition justify-end font-arabicUI3 flex text-4xl m-4 rounded-xl`}
+                            >
+                                <span className="m-auto">{item}</span>
+                            </h3>
+                        ))}
+
+
+                        <div className="flex justify-center mt-5">
+                            <button
+                                onClick={handlePreviousPage}
+                                disabled={currentPage === 1}
+                                className="px-5 py-2 bg-blue-500 text-white rounded-2xl font-arabicUI3 text-4xl m-2 disabled:opacity-50"
+                            >
+                                السابق
+                            </button>
+                            <button
+                                onClick={handleNextPage}
+                                disabled={currentPage === totalPages}
+                                className="px-5 py-2 bg-blue-500 text-white rounded-2xl font-arabicUI3 text-4xl m-2 disabled:opacity-50"
+                            >
+                                التالي
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div className="border-4 rounded-xl col-span-2 m-4 h-fit">
+                        <h3 className="p-2 text-center font-arabicUI3 leading-normal text-5xl text-white">
+                            تفاصيل الاشتراك
                         </h3>
-                    ))}
-                  
-                    
-                    <div className="flex justify-center mt-5">
-                        <button
-                            onClick={handlePreviousPage}
-                            disabled={currentPage === 1}
-                            className="px-5 py-2 bg-blue-500 text-white rounded-2xl font-arabicUI3 text-4xl m-2 disabled:opacity-50"
-                        >
-                            السابق
-                        </button>
-                        <button
-                            onClick={handleNextPage}
-                            disabled={currentPage === totalPages}
-                            className="px-5 py-2 bg-blue-500 text-white rounded-2xl font-arabicUI3 text-4xl m-2 disabled:opacity-50"
-                        >
-                            التالي
-                        </button>
+                        {email ? (
+                            filteredData.map((item, index) => (
+                                <h3
+                                    key={index}
+                                    className={`text-blue-950 bg-white cursor-pointer duration-300 text-right p-2 transition justify-end font-arabicUI3 flex text-4xl m-4 rounded-xl`}
+                                >
+                                    <span className="m-auto">{item.courseid.toUpperCase()}</span>
+                                    <span className="m-auto">{item.dataofSub} </span>
+                                </h3>
+                            ))
+                        ) : (
+                            <h4 className="text-white m-5 font-arabicUI3 text-6xl text-center leading-relaxed bg-green-400 rounded-xl">
+                                اختار ايميل من فضلك
+                            </h4>
+                        )}
                     </div>
                 </div>
+            </>
 
-              
-                <div className="border-4 rounded-xl col-span-2 m-4 h-fit">
-                    <h3 className="p-2 text-center font-arabicUI3 leading-normal text-5xl text-white">
-                        تفاصيل الاشتراك
-                    </h3>
-                    {email ? (
-                        filteredData.map((item, index) => (
-                            <h3
-                                key={index}
-                                className={`text-blue-950 bg-white cursor-pointer duration-300 text-right p-2 transition justify-end font-arabicUI3 flex text-4xl m-4 rounded-xl`}
-                            >
-                                <span className="m-auto">{item.courseid.toUpperCase()}</span>
-                                <span className="m-auto">{item.dataofSub} </span>
-                            </h3>
-                        ))
-                    ) : (
-                        <h4 className="text-white m-5 font-arabicUI3 text-6xl text-center leading-relaxed bg-green-400 rounded-xl">
-                            اختار ايميل من فضلك
-                        </h4>
-                    )}
-                </div>
-            </div>
+
+            )
+
+                :
+                (
+                    <div>
+
+                        <input
+                            value={adminpass}
+                            onChange={(e) =>handleinputpass(e)}
+                            type="text"
+                            placeholder="كلمه سر الادمن .."
+                            className="  text-left p-2 text-4xl w-2/5 flex justify-center mx-auto font-arabicUI3 rounded-xl m-5"
+                        />
+                    </div>
+                )}
+
         </div>
+
+
+
     );
 };
 
