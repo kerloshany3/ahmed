@@ -31,10 +31,10 @@ const Subs = () => {
     };
 
     return (
-        <div className='m-10 bg-brain-image bg-cover p-4 rounded-xl bg-center'>
+        <div className='m-5  bg-brain-image   p-4 rounded-xl bg-center'>
             <div className='p-5'>
                 <div className='cursor-default backdrop-blur-xl rounded-xl w-fit m-auto outline-dashed outline-2 outline-white p-5'>
-                    <h4 className='m-auto flex justify-center font-arabicUI2 text-white text-5xl'>
+                    <h4 className='m-auto flex justify-center max-sm:text-xl text-center font-arabicUI2 text-white text-5xl'>
                         الكورسات اللي انت مشترك فيها
                     </h4>
                 </div>
@@ -45,13 +45,13 @@ const Subs = () => {
                     </h4>
                 ) : EnrollDAta.length > 0 ? (
                     <div
-                        className='grid gap-6 rtl-grid'
-                        style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}
+                        className='grid gap-6  grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 rtl-grid'
+                    
                     >
                         {EnrollDAta.map((item) => (
                             <div
                                 key={item?.course?.nicknameforcourse}
-                                className='m-5 h-fit backdrop-blur-2xl shadow-white/10 outline-dashed outline-white outline-2 shadow-xl p-5 rounded-xl'
+                                className='m-5 max-sm:my-5 max-sm:m-0 h-fit backdrop-blur-2xl shadow-white/10 outline-dashed outline-white outline-2 shadow-xl p-5 rounded-xl'
                             >
                                 <div>
                                     <h4 className='font-arabicUI2 text-white text-4xl mb-4'>
@@ -70,7 +70,7 @@ const Subs = () => {
                         ))}
                     </div>
                 ) : (
-                    <h4 className='font-arabicUI3 backdrop-blur-xl p-5 m-6 rounded-2xl border w-fit flex justify-center mx-auto text-white text-5xl'>
+                    <h4 className='font-arabicUI3 backdrop-blur-xl max-sm:text-xl  text-center p-5 m-6 rounded-2xl border w-fit flex justify-center mx-auto text-white text-5xl'>
                         انت مش مشترك فكورسات للاسف
                     </h4>
                 )}

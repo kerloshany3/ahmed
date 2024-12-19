@@ -50,13 +50,9 @@ export default function RootLayout({ children }) {
 
 
 
-          <div className="  ">
 
-
-
-            <Header></Header>
-            {children}
-          </div>
+          <Header></Header>
+          {children}
 
           <Footer></Footer>
 

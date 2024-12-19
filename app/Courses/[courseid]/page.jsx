@@ -28,8 +28,8 @@ const page = ({ params }) => {
 
     const getallcoures = () => {
         GlobalApi.getcourseinfo(courseid).then(res => {
-           
-            
+
+
             setCourseInfo(res.course)
             setcourseVideoChapters(res.course.chapterMood)
         })
@@ -40,23 +40,23 @@ const page = ({ params }) => {
 
     const { user } = useUser()
     const [EnrollDAta, setEnrollData] = useState([])
-    
+
     useEffect(() => {
         user?.primaryEmailAddress?.emailAddress && EnrooolUser(user?.primaryEmailAddress?.emailAddress)
     }, [user?.primaryEmailAddress?.emailAddress])
 
     const EnrooolUser = () => {
         GlobalApi.EnrollmentUsers(user?.primaryEmailAddress?.emailAddress).then(res => {
-            
-            
+
+
             setEnrollData(res.userEnrolls)
         })
     }
 
-    
+
     const filteredcourse = EnrollDAta.filter(item => item?.course?.nicknameforcourse === courseInfo.nicknameforcourse)
-    
-    
+
+
     const isCourseFound = filteredcourse.length > 0;
 
     const handlechapterClick = (index) => {
@@ -75,15 +75,15 @@ const page = ({ params }) => {
 
     return (
 
-        <div className=' font-arabicUI select-none bg-brain-image rounded-xl shadow-2xl shadow-white/15 p-5'>
-            <div className={`  h-fit max-sm:w-fit  outline-dashed outline-2 outline-white  backdrop-blur-3xl bg-gradient-to-l shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl `}>
-                <h3 className=' leading-relaxed max-sm:text-3xl text-5xl text-right  text-white '>{courseInfo.nameofcourse} </h3>
-                <p className=' my-10 font-arabicUI3 max-sm:text-lg text-2xl whitespace-pre-wrap text-white/90 text-right'>{courseInfo.description}</p>
+        <div className=' font-arabicUI select-none my-8 bg-brain-image rounded-xl shadow-2xl shadow-white/15 p-5'>
+            <div className={`  h-fit max-sm:w-full  outline-dashed outline-2 outline-white  backdrop-blur-3xl bg-gradient-to-l shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl `}>
+                <h3 className=' leading-relaxed max-sm:text-xl text-5xl text-right  text-white '>{courseInfo.nameofcourse} </h3>
+                <p className=' my-10 font-arabicUI3 max-sm:text-sm text-2xl whitespace-pre-wrap text-white/90 text-right'>{courseInfo.description}</p>
             </div>
 
-            <div className='grid max-sm:grid-cols-1 max-md:grid-cols-1 max-lg:grid-cols-1 grid-cols-3'>
-                <div>
-                    <div className={`   h-fit max-sm:w-fit  bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white bg-white/10 backdrop-blur-3xl`}>
+            <div className='grid max-sm:grid-cols-1 rtl-grid max-md:grid-cols-1 max-lg:grid-cols-1 grid-cols-3'>
+                <div className=' order-2'>
+                    <div className={`   h-fit max-sm:w-full  bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white bg-white/10 backdrop-blur-3xl`}>
                         <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl max-xl:text-3xl'>محتوي الكورس</h2>
 
 
@@ -91,8 +91,8 @@ const page = ({ params }) => {
                             <>
 
                                 {courseVideoChapters.map((item, index) => (
-                                    <div onClick={() => handlechapterClick(index)} key={index} className=' hover:scale-105 hover:bg-white    relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
-                                        <h2 className={`  hover:text-slate-700 duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
+                                    <div onClick={() => handlechapterClick(index)} key={index} className='  hover:scale-105 hover:bg-white    relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
+                                        <h2 className={`  hover:text-slate-700  max-sm:text-lg duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
                                             <span className=' absolute left-5'>
                                                 {isCourseFound ? (
                                                     <FaPlay />
@@ -134,7 +134,7 @@ const page = ({ params }) => {
 
                                 {courseVideoChapters.map((item, index) => (
                                     <div onClick={() => handlechapterClick(0)} key={index} className=' hover:scale-105 hover:bg-white   relative duration-500 cursor-pointer  rounded-lg my-5 text-right '>
-                                        <h2 className={`  hover:text-slate-700 duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
+                                        <h2 className={`  hover:text-slate-700  max-sm:text-lg  duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"} `}>
                                             <span className=' absolute left-5'>
                                                 {isCourseFound ? (
                                                     <FaPlay />
@@ -155,8 +155,8 @@ const page = ({ params }) => {
                                         <div key={index} onClick={() => handlechapterClick2(index)} className=' relative hover:scale-105 hover:bg-white  duration-500 cursor-pointer  rounded-lg my-5 text-right '>
 
 
-                                            <h4 className={`  hover:text-slate-700 gap-1 duration-500 text-white text-3xl max-xl:text-2xl p-5  ${activeIndex2 == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"}  `}>
-                                                <span className=' absolute left-5  text-4xl'> <FaLock /></span>
+                                            <h4 className={`  hover:text-slate-700  max-sm:text-lg  gap-1 duration-500  text-3xl text-white  max-xl:text-2xl p-5  ${activeIndex2 == index && "bg-green-500 hover:bg-white hover:text-green-500 rounded-lg"}  `}>
+                                                <span className=' absolute left-5   max-sm:text-2xl  text-4xl'> <FaLock /></span>
                                                 {item?.quiztitle}
 
                                             </h4>
@@ -180,11 +180,11 @@ const page = ({ params }) => {
 
 
 
-                <div className={`  h-fit max-sm:w-fit  col-span-2 bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white backdrop-blur-2xl`}>
+                <div className={` order-1  h-fit max-sm:w-fit  col-span-2 bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 rounded-2xl  outline-dashed outline-2 outline-white backdrop-blur-2xl`}>
 
 
                     <div>
-                        <h3 className=' text-right mb-8 text-4xl text-white'>{courseVideoChapters[activeIndex]?.nameofchapter}</h3>
+                        <h3 className=' text-right mb-8  text-4xl max-sm:text-xl text-white'>{courseVideoChapters[activeIndex]?.nameofchapter}</h3>
 
                         {courseVideoChapters[activeIndex]?.chaptervideo?.url ? (
 
@@ -195,7 +195,7 @@ const page = ({ params }) => {
 
 
                         ) : (<div>
-                            <h4 className=' text-5xl font-arabicUI3 leading-relaxed text-white text-right mb-16'>
+                            <h4 className=' text-5xl font-arabicUI3  max-sm:text-3xl leading-relaxed text-white text-right mb-16'>
 
                                 {!isCourseFound ? " اشترك فالكورس عشان تقدر تفتح المحتوي " : "تم فتح الكورس بنجاح"}   </h4>
                         </div>)}

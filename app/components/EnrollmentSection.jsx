@@ -12,23 +12,23 @@ const EnrollmentSection = ({ courseInfo }) => {
 
     const { user } = useUser()
     const [EnrollDAta, setEnrollData] = useState([])
-    
+
     useEffect(() => {
         user?.primaryEmailAddress?.emailAddress && EnrooolUser(user?.primaryEmailAddress?.emailAddress)
     }, [user?.primaryEmailAddress?.emailAddress])
 
     const EnrooolUser = () => {
         GlobalApi.EnrollmentUsers(user?.primaryEmailAddress?.emailAddress).then(res => {
-            
+
             setEnrollData(res.userEnrolls)
         })
     }
 
-    
+
 
     const filteredcourse = EnrollDAta.filter(item => item?.course?.nicknameforcourse === courseInfo.nicknameforcourse)
-    
-    
+
+
     const isCourseFound = filteredcourse.length > 0;
 
     return (
@@ -44,18 +44,18 @@ const EnrollmentSection = ({ courseInfo }) => {
                 </div>) :
 
                 (
-                    <div className={`   h-fit max-sm:w-fit  bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 from-green-400 to-green-500 rounded-2xl `}>
+                    <div className={`   h-fit max-sm:w-full  bg-gradient-to-tr shadow-2xl max-sm:mx-0 p-5 m-5 from-green-400 to-green-500 rounded-2xl `}>
 
                         {user ? (
                             isCourseFound ? (
-                                <h2 className=' text-white cursor-default flex justify-center m-auto  font-arabicUI3 text-5xl'>
+                                <h2 className=' text-white drop-shadow-2xl cursor-default flex justify-center max-sm:text-3xl text-center m-auto  font-arabicUI3 text-5xl'>
                                     <span className=' p-6 rounded-2xl text-green-500 block w-full bg-white m-auto text-center'>
-                                        {isCourseFound ?<span className=' flex gap-5'><BsPatchCheckFill />تم الاشتراك</span> : "  اشترك دلوقتي"}
+                                        {isCourseFound ? <span className=' flex gap-5'><BsPatchCheckFill />تم الاشتراك</span> : "  اشترك دلوقتي"}
                                     </span>
                                 </h2>
                             ) : (<Link href={`/payment/${courseInfo.nicknameforcourse}`} >
-                                <h2 className=' text-white flex justify-center m-auto  font-arabicUI3 text-5xl'>
-                                    <span className=' p-6 rounded-2xl text-green-500 block w-full bg-white m-auto text-center'>
+                                <h2 className=' text-white flex drop-shadow-2xl justify-center m-auto   max-sm:text-3xl text-center  font-arabicUI3 text-5xl'>
+                                    <span className=' p-6 rounded-2xl text-green-500  block w-full bg-white m-auto text-center'>
                                         {isCourseFound ? <span className=' flex gap-5'><BsPatchCheckFill />تم الاشتراك</span> : "  اشترك دلوقتي"}
                                     </span>
                                 </h2>

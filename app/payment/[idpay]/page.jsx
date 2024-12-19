@@ -75,7 +75,7 @@ const Page = ({ params }) => {
     };
 
     return (
-        <div className='text-white max-sm:text-2xl text-5xl font-abril mt-7'>
+        <div className='text-white max-sm:text-2xl text-5xl m-3 font-abril mt-7'>
 
             {user ? (
                 <div className='w-1/2 max-md:w-full max-sm:w-full m-auto bg-custom-image p-6 bg-cover rounded-xl shadow-2xl shadow-red-900/30'>
