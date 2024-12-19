@@ -154,7 +154,7 @@ const SaveGradesOfQuiz = async(userEmail, uerName, userGrade,quizname,numofqus) 
   }
 
   
-  publishManyQuizresultsConnection (first: 1000) {
+  publishManyQuizresultsConnection (first: 10000) {
     edges {
       node {
         id
@@ -188,6 +188,24 @@ query MyQuery {
   return quizres;
 }
 
+const data4admin = async () => {
+  const dataa4admin = gql`
+  
+  query MyQuery {
+  userEnrolls {
+    userEmail
+    courseid
+    course {
+      price
+    }
+  }
+}
+  `
+
+  const admindata = await request(MASTER_URL, dataa4admin)
+  return admindata
+}
+
 export default {
   getAllCourseList,
   getcourseinfo,
@@ -196,4 +214,5 @@ export default {
   getQuizDataWithEnroll,
   SaveGradesOfQuiz,
   vquiz,
+  data4admin
 }
