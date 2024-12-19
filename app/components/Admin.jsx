@@ -11,6 +11,7 @@ const Admin = () => {
     const [searchEmail, setSearchEmail] = useState('');
     const emailsPerPage = 5; // Emails to show per page
 
+    console.log(filteredData)
     const handleSelectEmail = (item, index) => {
         setEmail(item);
         SetActiveEmail(index);
@@ -40,6 +41,14 @@ const Admin = () => {
         }
     }, [numOfStu, email]);
 
+    console.log(numOfStu)
+
+    const convertDate = (dateStr) => {
+        const date = new Date(dateStr);
+        // Format the date as y/m/d
+        return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+    };
+    
     const getDataForEmail = (email) => {
         const userData = numOfStu.filter((item) => item.userEmail === email);
 
@@ -51,6 +60,7 @@ const Admin = () => {
                 acc.push({
                     courseid: item.courseid,
                     totalPrice: item.course.price,
+                    dataofSub: convertDate(item.course.updatedAt)
                 });
             }
             return acc;
@@ -158,7 +168,7 @@ const Admin = () => {
                                 className={`text-blue-950 bg-white cursor-pointer duration-300 text-right p-2 transition justify-end font-arabicUI3 flex text-4xl m-4 rounded-xl`}
                             >
                                 <span className="m-auto">{item.courseid.toUpperCase()}</span>
-                                <span className="m-auto">{item.totalPrice} جنيه</span>
+                                <span className="m-auto">{item.dataofSub} </span>
                             </h3>
                         ))
                     ) : (

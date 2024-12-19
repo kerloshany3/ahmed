@@ -197,6 +197,7 @@ const data4admin = async () => {
     courseid
     course {
       price
+      updatedAt
     }
   }
 }
