@@ -49,7 +49,7 @@ const Courses = () => {
                         >
                             {/* Course Name */}
                             <Link href={`/Courses/${item?.nicknameforcourse}`}>
-                                <h3 className="text-3xl max-md:text-5xl max-sm:text-sm leading-normal text-right text-white">
+                                <h3 className="text-3xl max-md:text-5xl max-sm:text-lg leading-normal text-right text-white">
                                     {item?.nameofcourse}
                                 </h3>
                             </Link>
