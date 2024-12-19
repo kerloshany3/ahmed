@@ -25,8 +25,8 @@ const QuizV = () => {
 
     return (
         <div>
-            <div className=' cursor-default  backdrop-blur-xl rounded-xl w-fit m-auto outline-dashed outline-2 outline-white  p-5'>
-                <h4 className=' m-auto flex justify-center font-arabicUI2 text-white text-5xl'>الكويزات اللي انت امتحنتها</h4>
+            <div className=' cursor-default  backdrop-blur-xl rounded-xl w-fit m-auto outline-dashed outline-2 bg-black/20 outline-white  p-5'>
+                <h4 className=' m-auto flex justify-center font-arabicUI2 max-sm:text-3xl text-center  text-white text-5xl'>الكويزات اللي انت امتحنتها</h4>
             </div>
 
             < div className=' grid cursor-default rtl-grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3 grid-cols-6'>

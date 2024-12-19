@@ -87,8 +87,8 @@ const QuizData = ({ params }) => {
         return answersofQuiz[index];
     };
 
-  
-    
+
+
 
     const calculateScore = () => {
         let calculatedScore = 0;
@@ -105,22 +105,22 @@ const QuizData = ({ params }) => {
 
 
     const trueChoices = enrolquiz?.question?.map((item) => item.trueChoisevip.toUpperCase()) || [];
-    
-    
+
+
 
 
 
     const results = trueChoices.map((answer, index) => {
         return answersofQuiz[index] === answer; // Returns true if correct, false otherwise
     });
-    
+
 
 
 
     const results2 = trueChoices.map((answer, index) => {
         return answer; // Returns true if correct, false otherwise
     });
-    
+
 
 
     const handleSumbit = () => {
@@ -140,11 +140,11 @@ const QuizData = ({ params }) => {
                 const saveGrade = async () => {
                     try {
                         const response = await GlobalApi.SaveGradesOfQuiz(
-                            email, user?.fullName, finalScore,enrolquiz.quiztitle,enrolquiz?.question?.length
+                            email, user?.fullName, finalScore, enrolquiz.quiztitle, enrolquiz?.question?.length
 
                         );
-                        
-                        
+
+
                         // Notify the user of successful submission
                         Swal.fire({
                             title: "تم التسليم بنجاح!",
@@ -176,10 +176,10 @@ const QuizData = ({ params }) => {
     return (
         <div>
             {!showResults ? (
-                <div className='bg-blod2-image cursor-default bg-cover rounded-xl p-8 m-4'>
+                <div className='bg-blod2-image cursor-default bg-cover rounded-xl max-sm:p-4 p-8 max-sm:m-2 m-4'>
                     <div className='backdrop-blur-2xl p-3 px-8 rounded-xl outline-dashed outline-white outline-2'>
                         <div className='flex justify-end'>
-                            <h4 className='text-right font-arabicUI3 text-6xl bg-white/10 p-4 w-fit rounded-md justify-start flex text-white'>
+                            <h4 className='text-right max-sm:text-2xl font-arabicUI3 text-6xl bg-white/10 p-4 w-fit rounded-md justify-start flex text-white'>
                                 <BiSolidPencil /> {enrolquiz.quiztitle}
                             </h4>
                         </div>
@@ -188,31 +188,31 @@ const QuizData = ({ params }) => {
                                 {enrolquiz?.question?.map((item, index) => (
                                     <h2
                                         onClick={() => handleClickNumber(index)}
-                                        className={`mb-7 cursor-pointer font-arabicUI3 text-4xl p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none ${activeIndex === index ? "bg-gray-800 text-white scale-125 mx-4" : "bg-white text-gray-800"}`}
+                                        className={`mb-7 max-sm:text-2xl cursor-pointer font-arabicUI3 text-4xl p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none ${activeIndex === index ? "bg-gray-800 text-white scale-125 max-sm:m-0 h-fit mx-4" : "bg-white text-gray-800"}`}
                                         key={index}>
                                         {index + 1}
                                     </h2>
                                 ))}
                             </div>
-                            <h2 className={`mb-7 cursor-pointer font-arabicUI3 text-4xl p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-white text-gray-800`}>
+                            <h2 className={`mb-7 cursor-pointer font-arabicUI3 text-4xl max-sm:mt-6 p-4 rounded-lg max-sm:text-2xl text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-white text-gray-800`}>
                                 {enrolquiz?.question && enrolquiz?.question[activeIndex] ? enrolquiz?.question[activeIndex]?.qus : 'No question available'}
                             </h2>
                             <div className='grid max-md:grid-cols-1 grid-cols-2'>
-                                <h2 onClick={() => handleChooseAnserw(1)} className={`mb-7 cursor-pointer font-arabicUI3 text-4xl m-3 p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-gray-800 ${actind4quiz === 1 || isAnswerSelected(activeIndex) === "A" ? "bg-green-400 text-gray-800" : ""} text-white`}>
+                                <h2 onClick={() => handleChooseAnserw(1)} className={`mb-7 cursor-pointer max-sm:text-2xl font-arabicUI3 text-4xl m-3 p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-gray-800 ${actind4quiz === 1 || isAnswerSelected(activeIndex) === "A" ? "bg-green-400 text-gray-800" : ""} text-white`}>
                                     {enrolquiz?.question && enrolquiz?.question[activeIndex] ? enrolquiz?.question[activeIndex]?.opationA : 'No question available'}
                                 </h2>
-                                <h2 onClick={() => handleChooseAnserw(2)} className={`mb-7 cursor-pointer font-arabicUI3 text-4xl m-3 p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-gray-800 ${actind4quiz === 2 || isAnswerSelected(activeIndex) === "B" ? "bg-green-400 text-gray-800" : ""} text-white`}>
+                                <h2 onClick={() => handleChooseAnserw(2)} className={`mb-7 cursor-pointer  max-sm:text-2xl font-arabicUI3 text-4xl m-3 p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-gray-800 ${actind4quiz === 2 || isAnswerSelected(activeIndex) === "B" ? "bg-green-400 text-gray-800" : ""} text-white`}>
                                     {enrolquiz?.question && enrolquiz?.question[activeIndex] ? enrolquiz?.question[activeIndex]?.opationB : 'No question available'}
                                 </h2>
-                                <h2 onClick={() => handleChooseAnserw(3)} className={`mb-7 cursor-pointer font-arabicUI3 text-4xl m-3 p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-gray-800 ${actind4quiz === 3 || isAnswerSelected(activeIndex) === "C" ? "bg-green-400 text-gray-800" : ""} text-white`}>
+                                <h2 onClick={() => handleChooseAnserw(3)} className={`mb-7 cursor-pointer max-sm:text-2xl  font-arabicUI3 text-4xl m-3 p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-gray-800 ${actind4quiz === 3 || isAnswerSelected(activeIndex) === "C" ? "bg-green-400 text-gray-800" : ""} text-white`}>
                                     {enrolquiz?.question && enrolquiz?.question[activeIndex] ? enrolquiz?.question[activeIndex]?.opationC : 'No question available'}
                                 </h2>
-                                <h2 onClick={() => handleChooseAnserw(4)} className={`mb-7 cursor-pointer font-arabicUI3 text-4xl m-3 p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-gray-800 ${actind4quiz === 4 || isAnswerSelected(activeIndex) === "D" ? "bg-green-400 text-gray-800" : ""} text-white`}>
+                                <h2 onClick={() => handleChooseAnserw(4)} className={`mb-7 cursor-pointer max-sm:text-2xl font-arabicUI3 text-4xl m-3 p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-gray-800 ${actind4quiz === 4 || isAnswerSelected(activeIndex) === "D" ? "bg-green-400 text-gray-800" : ""} text-white`}>
                                     {enrolquiz?.question && enrolquiz?.question[activeIndex] ? enrolquiz?.question[activeIndex]?.opationD : 'No question available'}
                                 </h2>
 
                             </div>
-                            <div className='flex'>
+                            <div className='flex gap-3'>
                                 <h2 onClick={() => {
                                     if (activeIndex < enrolquiz?.question?.length - 1) {
                                         setActiveINdex(activeIndex + 1);
@@ -220,12 +220,12 @@ const QuizData = ({ params }) => {
                                     } else {
                                         setNext(true);
                                     }
-                                }} className={`mb-7 cursor-pointer w-fit font-arabicUI3 text-5xl m-3 p-8 mx-auto rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-white text-gray-800`}>
+                                }} className={`mb-7 cursor-pointer max-sm:text-2xl max-sm:p-4 w-fit font-arabicUI3 text-5xl m-3 p-8 mx-auto rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-white text-gray-800`}>
                                     {!next ? "السوال التالي" : "الأسئلة خلصت"}
                                 </h2>
 
                                 {next && (
-                                    <h4 onClick={() => handleSumbit()} className={`mb-7 cursor-pointer w-fit font-arabicUI3 text-5xl m-3 p-8 mx-auto rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-green-400 text-gray-800`}>
+                                    <h4 onClick={() => handleSumbit()} className={`mb-7 max-sm:p-2  max-sm:text-2xl cursor-pointer w-fit font-arabicUI3 text-5xl m-3 p-8 mx-auto rounded-lg text-center hover:bg-white/40 duration-500 transition active:ring-4 select-none bg-green-400 text-gray-800`}>
                                         تسليم الامتحان
                                     </h4>
                                 )}
@@ -236,19 +236,19 @@ const QuizData = ({ params }) => {
             ) : (
                 <div className='bg-blod2-image cursor-default bg-cover rounded-xl p-8 m-4'>
                     <div className=' backdrop-blur-3xl rounded-xl  p-6'>
-                        <h1 className='font-arabicUI3 text-6xl text-center text-white'>نتيجتك: {score}/{enrolquiz?.question?.length}</h1>
+                        <h1 className='font-arabicUI3 text-6xl max-sm:text-3xl text-center text-white'>نتيجتك: {score}/{enrolquiz?.question?.length}</h1>
 
                         <div className=' m-6'>
                             <ProgCircle nsaba={(score / enrolquiz?.question?.length) * 100}></ProgCircle>
 
                         </div>
 
-                        <div className=' grid grid-cols-3'>
+                        <div className=' grid max-sm:grid-cols-1 grid-cols-3'>
                             {enrolquiz?.question?.map((item, index) => (
                                 <div key={index}>
                                     <h2
                                         onClick={() => handleClickNumber(index)}
-                                        className={` cursor-pointer font-arabicUI3 m-5 text-4xl p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition h-fit active:ring-4 select-none  bg-white text-gray-800 `}
+                                        className={` cursor-pointer max-sm:text-lg font-arabicUI3 m-5 text-4xl p-4 rounded-lg text-center hover:bg-white/40 duration-500 transition h-fit active:ring-4 select-none  bg-white text-gray-800 `}
                                     >
                                         {item.qus}
                                     </h2>
@@ -294,7 +294,7 @@ const QuizData = ({ params }) => {
 
 
                         <Link href='/'>
-                            <div className=' text-7xl text-white p-5 flex justify-center mx-auto m-6 font-arabicUI2 bg-white/20 w-fit  rounded-xl outline-1 outline-white outline-dashed'>
+                            <div className=' text-7xl max-sm:text-2xl text-white p-5 flex justify-center mx-auto m-6 font-arabicUI2 bg-white/20 w-fit  rounded-xl outline-1 outline-white outline-dashed'>
                                 <h1>الصفحة الرئيسية</h1>
                             </div>
                         </Link>

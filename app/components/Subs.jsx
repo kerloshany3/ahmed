@@ -31,10 +31,10 @@ const Subs = () => {
     };
 
     return (
-        <div className='m-5  bg-brain-image   p-4 rounded-xl bg-center'>
+        <div className='m-5  bg-brain-image bg-cover  p-4 rounded-xl bg-center'>
             <div className='p-5'>
-                <div className='cursor-default backdrop-blur-xl rounded-xl w-fit m-auto outline-dashed outline-2 outline-white p-5'>
-                    <h4 className='m-auto flex justify-center max-sm:text-xl text-center font-arabicUI2 text-white text-5xl'>
+                <div className='cursor-default backdrop-blur-xl bg-black/20 rounded-xl w-fit m-auto outline-dashed outline-2 outline-white p-5'>
+                    <h4 className='m-auto flex justify-center  max-sm:text-xl text-center font-arabicUI2 text-white text-5xl'>
                         الكورسات اللي انت مشترك فيها
                     </h4>
                 </div>
